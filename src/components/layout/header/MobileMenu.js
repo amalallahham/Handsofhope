@@ -24,7 +24,7 @@ const MobileMenu = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
 						<div className="hamburger_top d-flex align-items-center justify-content-between">
 							<div className="hamburger_logo">
 								<Link href="/" className="mobile_logo">
-									<Image src="/images/logos/logo-white.svg" alt="Logo" width={100} height={50} />
+									<Image src="/images/logos/logo-white.svg" alt="Logo" width={100} height={50} style={{ height: "auto", display: "block" }} />
 								</Link>
 							</div>
 							<div className="hamburger_close">
