@@ -29,7 +29,6 @@ const Blogs8 = () => {
         )
         .order("event_date", { ascending: false }) // latest first
         .limit(3);
-      console.log("Fetching events...", data);
       if (error) {
         console.error("Error fetching events:", error);
       } else {

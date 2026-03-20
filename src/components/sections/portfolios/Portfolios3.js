@@ -26,16 +26,13 @@ const Portfolios3 = () => {
 
       setLoading(false);
     };
-	console.log("Fetching campaigns...");
 
     getCampaigns();
   }, []);
 
 
 
-  useEffect(() => {	
-	console.log("Campaigns updated:", campaigns);
-  }, [campaigns]);
+
 
   return (
     <section className="tj-project-section-3 section-gap section-gap-x">

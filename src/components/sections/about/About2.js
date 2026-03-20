@@ -54,7 +54,7 @@ const About2 = () => {
 								<PopupVideo>
 									<Link
 										className="video-btn video-popup glightbox"
-										href="https://www.youtube.com/watch?v=MLpWrANjFbI&amp;ab_channel=eidelchteinadvogados"
+										href="https://youtu.be/QeWHBxYm4kE"
 									>
 										<span>
 											<i className="tji-play"></i>

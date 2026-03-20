@@ -132,7 +132,7 @@ const About3 = ({ type }) => {
 											data-autoplay="true"
 											data-vbtype="video"
 											data-maxwidth="1200px"
-											href="https://www.youtube.com/watch?v=MLpWrANjFbI"
+											href="https://youtu.be/QeWHBxYm4kE"
 										>
 											<span className="play-btn">
 												<i className="tji-play"></i>

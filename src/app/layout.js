@@ -32,8 +32,8 @@ const headingFont = Mona_Sans({
 });
 
 export const metadata = {
-	title: "Bexon - Corporate Business React NextJs Template",
-	description: "Bexon - Corporate Business React NextJs Template",
+	title: "Hands of Hope",
+	description: "Hands of Hope - Nonprofit Organization Dedicated to Providing Aid and Support to Those in Need",
 };
 
 export default function RootLayout({ children }) {

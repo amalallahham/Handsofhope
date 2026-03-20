@@ -24,8 +24,7 @@ export default async function PortfolioDetails({ params }) {
         .order("created_at", { ascending: false })
 		.limit(3);
 
-	console.log("PortfolioDetails - campaign:", campaign);
-	console.log("PortfolioDetails - latestCampaigns:", latestCampaigns);
+
 
 	if(latestCampaignsError) {
 		console.error("Error fetching latest campaigns:", latestCampaignsError	);

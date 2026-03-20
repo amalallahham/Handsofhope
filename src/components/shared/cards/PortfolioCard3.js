@@ -3,7 +3,6 @@ import Link from "next/link";
 import ButtonPrimary from "../buttons/ButtonPrimary";
 
 const PortfolioCard3 = ({ portfolio }) => {
-  console.log(portfolio);
   const {
         title = "Event Management Platform",
         poster_url = portfolio?.poster_url || "/assets/img/project/3.jpg",

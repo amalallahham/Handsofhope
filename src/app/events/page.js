@@ -24,7 +24,6 @@ export default async function BlogRightSidebar() {
     console.error("Error fetching events:", error.message);
   }
 
-  console.log("Fetched events:", events);
 
   return (
     <div>

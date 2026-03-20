@@ -24,26 +24,37 @@ import tjStackAnimation2 from "@/libs/tjStackAnimation2";
 import tjStackAnimation3 from "@/libs/tjStackAnimation3";
 import tjZoomInScroll from "@/libs/tjZoomInScroll";
 import { useEffect } from "react";
+
 const ClientWrapper = () => {
 	useEffect(() => {
 		import("wow.js").then(({ default: WOW }) => {
 			new WOW().init();
 		});
+
 		smoothScrollToTop();
 		const cleanup = tjMagicCursorAnimation();
+
 		return () => {
 			if (cleanup) cleanup();
 		};
 	}, []);
+
 	useGSAP((context, contextSafe) => {
-		initSmoothScroller();
+		const isMobile = window.innerWidth <= 991;
+
+		if (!isMobile) {
+			initSmoothScroller();
+			sidebarSticky();
+			tjImageParallex();
+			tjScrollSlider();
+		}
+
 		tjRightSwipeAnimation();
 		tjLeftSwipeAnimation();
 		titleAnim();
 		titleAnim2();
 		titleAnim3();
 		textReavealAnim();
-		sidebarSticky();
 		arrangeAnim();
 		arrangeAnim2();
 		animateInvertText();
@@ -51,13 +62,12 @@ const ClientWrapper = () => {
 		onePageNavAnim(contextSafe);
 		progressBar();
 		tjStackAnimation();
-		tjScrollSlider();
 		tjStackAnimation2();
-		tjImageParallex();
 		tjProgressAnimation();
 		tjZoomInScroll();
 		tjStackAnimation3();
 	});
+
 	return null;
 };
 

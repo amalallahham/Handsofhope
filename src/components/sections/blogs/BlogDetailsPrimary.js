@@ -10,7 +10,6 @@ const BlogDetailsPrimary = ({ option }) => {
   const { prevId, nextId, currentItem, isPrevItem, isNextItem } = option || {};
   const { title, id, image_url, tags } = option || {};
 
-
   const categories = {
     event_date: option?.event_date,
     doors_open: option?.doors_open,
@@ -21,8 +20,9 @@ const BlogDetailsPrimary = ({ option }) => {
     child_price: option?.kid_price,
   };
 
-    console.log("option:", categories);
-
+  const isHappened = option?.event_date
+    ? new Date(option?.event_date) < new Date()
+    : false;
 
   const media_partenrs = option?.sponsors.filter(
     (sponsor) => sponsor?.type === "media_partner",
@@ -552,14 +552,16 @@ const BlogDetailsPrimary = ({ option }) => {
                   </div>
                 </div>
               </div> */}
-                <div className="d-flex align-items-center justify-content-center border-top-dashed pt-4 w-100">
-                  <ButtonPrimary text={"Register Now"} type={"submit"} />
-                </div>
+                {!isHappened && (
+                  <div className="d-flex align-items-center justify-content-center border-top-dashed pt-4 w-100">
+                    <ButtonPrimary text={"Register Now"} type={"submit"} />
+                  </div>
+                )}
               </div>
             </div>
           </div>
 
-          <div className="col-lg-4 blog-sidebar-col" >
+          <div className="col-lg-4 blog-sidebar-col">
             <div className="sidebar-sticky-wrapper">
               <BlogSidebar categories={categories} />
             </div>
