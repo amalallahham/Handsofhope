@@ -7,7 +7,7 @@ const Logo = ({ headerType, isStickyHeader }) => {
     <div className="site_logo">
       <Link className="logo" href="/">
         <Image
-          src="/images/logos/logo-3.svg"
+          src="/images/logos/Asset.svg"
           alt="Hands of Hope logo"
           width={544}
           height={152}
