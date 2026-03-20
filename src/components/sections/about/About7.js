@@ -22,7 +22,7 @@ const About7 = () => {
 												className="sub-title wow fadeInUp"
 												data-wow-delay=".3s"
 											>
-												<i className="tji-box"></i>Get to Know Us
+												<i className="tji-manage"></i>Get to Know Us
 											</span>
 										</div>
 									</div>

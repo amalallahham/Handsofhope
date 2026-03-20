@@ -10,7 +10,7 @@ const Blogs3 = () => {
 					<div className="col-12">
 						<div className="sec-heading style-3 text-center">
 							<span className="sub-title wow fadeInUp" data-wow-delay=".3s">
-								<i className="tji-box"></i>Read Blogs
+								<i className="tji-manage"></i>Read Blogs
 							</span>
 							<h2 className="sec-title title-anim">Strategies and Insights.</h2>
 						</div>

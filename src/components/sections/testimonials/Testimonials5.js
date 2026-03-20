@@ -14,7 +14,7 @@ const Testimonials5 = () => {
 					<div className="col-12">
 						<div className="sec-heading style-3 sec-heading-centered">
 							<span className="sub-title wow fadeInUp" data-wow-delay=".3s">
-								<i className="tji-box"></i>CLIENT FEEDBACKS
+								<i className="tji-manage"></i>CLIENT FEEDBACKS
 							</span>
 							<h2 className="sec-title text-anim">
 								Success Stories Fuel our Innovation.

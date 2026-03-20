@@ -30,7 +30,7 @@ const Process4 = () => {
 					<div className="col-12 col-lg-5">
 						<div className="sec-heading style-3 tj-sticky-panel-3">
 							<span className="sub-title">
-								<i className="tji-box"></i> Our PROCESS
+								<i className="tji-manage"></i> Our PROCESS
 							</span>
 							<h2 className="sec-title text-anim">
 								Seamless Process and Great Results.

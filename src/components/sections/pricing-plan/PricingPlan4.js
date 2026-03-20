@@ -8,7 +8,7 @@ const PricingPlan4 = () => {
 					<div className="col-12">
 						<div className="sec-heading style-3 sec-heading-centered">
 							<span className="sub-title wow fadeInUp" data-wow-delay=".3s">
-								<i className="tji-box"></i>Our PRICING PLAN
+								<i className="tji-manage"></i>Our PRICING PLAN
 							</span>
 							<h2 className="sec-title text-anim">Our Pricing Plan.</h2>
 						</div>

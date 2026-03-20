@@ -13,7 +13,7 @@ const Services7 = () => {
 							<div className="row">
 								<div className="col-12 col-lg-4 col-xl-3">
 									<span className="sub-title wow fadeInUp" data-wow-delay=".3s">
-										<i className="tji-box"></i>Our Solutions
+										<i className="tji-manage"></i>Our Solutions
 									</span>
 								</div>
 								<div className="col-12 col-lg-8 col-xl-9">

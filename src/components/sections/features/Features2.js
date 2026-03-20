@@ -34,7 +34,7 @@ const Features2 = () => {
           <div className="col-12">
             <div className="sec-heading style-3 text-center">
               <span className="sub-title wow fadeInUp" data-wow-delay=".3s">
-                <i className="tji-box"></i>What We Do
+                <i className="tji-manage"></i>What We Do
               </span>
               <h2 className="sec-title title-anim">
                 Serving Communities with Compassion, Dignity, and Hope
@@ -45,7 +45,7 @@ const Features2 = () => {
         <div className="row row-gap-4 rightSwipeWrap">
           {features?.length
             ? features?.map((feature, idx) => (
-                <div key={idx} className="col-xl-3 col-md-6">
+                <div key={idx} className="col-xl-3 col-md-6 col-sm-6 col-6">
                   <FeatureCard2 feature={feature} idx={idx} />
                 </div>
               ))

@@ -11,7 +11,7 @@ const Portfolios7 = () => {
 					<div className="col-12 col-lg-4 ">
 						<div className="sec-heading style-2 style-7 tj-sticky-panel">
 							<span className="sub-title wow fadeInUp" data-wow-delay=".3s">
-								<i className="tji-box"></i> Proud Projects
+								<i className="tji-manage"></i> Proud Projects
 							</span>
 							<h2 className="sec-title text-anim">
 								Driving Success Through Our Projects.

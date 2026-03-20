@@ -29,7 +29,7 @@ const Testimonials6 = () => {
 							<div className="content-wrap">
 								<div className="sec-heading style-2 style-6">
 									<span className="sub-title wow fadeInUp" data-wow-delay=".3s">
-										<i className="tji-box"></i>CLIENT FEEDBACK
+										<i className="tji-manage"></i>CLIENT FEEDBACK
 									</span>
 									<h2 className="sec-title title-anim">
 										Our Clients Share Their Success Stories

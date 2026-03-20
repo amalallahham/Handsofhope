@@ -9,7 +9,7 @@ const Funfact2 = () => {
 						<div className="heading-wrap-content">
 							<div className="sec-heading style-4">
 								<span className="sub-title wow fadeInUp" data-wow-delay=".3s">
-									<i className="tji-box"></i>OUR FUN FACT
+									<i className="tji-manage"></i>OUR FUN FACT
 								</span>
 								<h2 className="sec-title title-anim">
 									Numbers and facts that define performance.

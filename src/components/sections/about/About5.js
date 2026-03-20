@@ -12,7 +12,7 @@ const About5 = () => {
 						>
 							<div className="sec-heading style-2 style-6">
 								<span className="sub-title  wow fadeInUp" data-wow-delay=".3s">
-									<i className="tji-box"></i>OUR COMPANY
+									<i className="tji-manage"></i>OUR COMPANY
 								</span>
 								<h2 className="sec-title title-anim">
 									Innovating Today for Build Smarter, Stronger, and More

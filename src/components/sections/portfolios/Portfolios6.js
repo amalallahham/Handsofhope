@@ -18,7 +18,7 @@ const Portfolios6 = () => {
 						<div className="heading-wrap-content">
 							<div className="sec-heading style-2 style-6">
 								<span className="sub-title wow fadeInUp" data-wow-delay=".3s">
-									<i className="tji-box"></i>Proud Projects
+									<i className="tji-manage"></i>Proud Projects
 								</span>
 								<h2 className="sec-title title-anim">
 									Breaking Boundaries, Building Dreams.

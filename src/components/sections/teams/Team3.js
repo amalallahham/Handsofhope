@@ -8,7 +8,7 @@ const Team3 = () => {
 					<div className="col-12">
 						<div className="sec-heading style-2 style-7 sec-heading-centered">
 							<span className="sub-title wow fadeInUp" data-wow-delay=".3s">
-								<i className="tji-box"></i> Meet Our Team
+								<i className="tji-manage"></i> Meet Our Team
 							</span>
 							<h2 className="sec-title text-anim">
 								The People Empowering Business Level.

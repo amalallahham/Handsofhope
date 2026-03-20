@@ -9,7 +9,7 @@ const Services5 = () => {
 					<div className="col-12">
 						<div className="sec-heading-wrap style-3">
 							<span className="sub-title wow fadeInUp" data-wow-delay=".3s">
-								<i className="tji-box"></i>Our Solutions
+								<i className="tji-manage"></i>Our Solutions
 							</span>
 							<div className="heading-wrap-content">
 								<div className="sec-heading style-3">

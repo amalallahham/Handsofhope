@@ -23,7 +23,7 @@ const About9 = () => {
 						<div className="h10-about-content-wrapper">
 							<div className="sec-heading style-3 ">
 								<span className="sub-title wow fadeInUp" data-wow-delay=".3s">
-									<i className="tji-box"></i> ABOUT OUR COMPANY
+									<i className="tji-manage"></i> ABOUT OUR COMPANY
 								</span>
 								<h2
 									className="sec-title title-highlight wow fadeInUp"

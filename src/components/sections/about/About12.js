@@ -8,7 +8,7 @@ const About12 = () => {
 					<div className="col-xl-5">
 						<div className="sec-heading mb-0">
 							<span className="sub-title wow fadeInUp" data-wow-delay="0.1s">
-								<i className="tji-box"></i> Our background
+								<i className="tji-manage"></i> Our background
 							</span>
 							<h2 className="sec-title text-anim">
 								Discover How We Have Evolved Our Company’s on{" "}

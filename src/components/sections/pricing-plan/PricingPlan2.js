@@ -214,7 +214,7 @@ const PricingPlan2 = () => {
 						<div className="content-wrap slidebar-stickiy">
 							<div className="sec-heading style-4">
 								<span className="sub-title wow fadeInUp" data-wow-delay=".3s">
-									<i className="tji-box"></i>Flexible pricing
+									<i className="tji-manage"></i>Flexible pricing
 								</span>
 								<h2 className="sec-title title-anim">Our Pricing Plan.</h2>
 							</div>

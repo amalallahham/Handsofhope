@@ -37,7 +37,7 @@ const Faq4 = () => {
 					<div className="col-12 col-lg-4">
 						<div className="sec-heading style-2 style-7 slidebar-stickiy">
 							<span className="sub-title wow fadeInUp" data-wow-delay=".3s">
-								<i className="tji-box"></i> OUR SOLUTIONS
+								<i className="tji-manage"></i> OUR SOLUTIONS
 							</span>
 							<h2 className="sec-title text-anim">
 								Find answers to the common questions

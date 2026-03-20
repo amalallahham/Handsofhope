@@ -18,7 +18,7 @@ const Choose = () => {
 						<div className="h8-choose-content-wrapper">
 							<div className="sec-heading style-3">
 								<span className="sub-title wow fadeInUp" data-wow-delay=".3s">
-									<i className="tji-box"></i>Choose the Best
+									<i className="tji-manage"></i>Choose the Best
 								</span>
 								<h2 className="sec-title title-anim">
 									Empowering Business with Expertise.

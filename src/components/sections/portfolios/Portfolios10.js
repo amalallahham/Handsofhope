@@ -63,7 +63,7 @@ const Portfolios10 = () => {
 					<div className="col-12">
 						<div className="sec-heading style-3 sec-heading-centered">
 							<span className="sub-title">
-								<i className="tji-box"></i>Latest Projects
+								<i className="tji-manage"></i>Latest Projects
 							</span>
 							<h2 className="sec-title text-anim">
 								Breaking Boundaries, Building Dreams.

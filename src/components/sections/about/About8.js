@@ -30,8 +30,9 @@ const About8 = () => {
 								<div className="about-img overflow-hidden">
 									<img
 										data-speed=".8"
-										src="/images/about/logo.svg"
+										src="/images/about/img.jpeg"
 										alt="Hands of Hope"
+										style={{ transform: 'translate(0, 0)' }}
 									/>
 								</div>
 

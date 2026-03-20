@@ -15,7 +15,7 @@ const Portfolios8 = () => {
 						<div className="sec-heading-wrap">
 							<div className="sec-heading style-3 m-0">
 								<span className="sub-title wow fadeInUp" data-wow-delay=".3s">
-									<i className="tji-box"></i>Choose the Best
+									<i className="tji-manage"></i>Choose the Best
 								</span>
 							</div>
 							<div className="heading-wrap-content">

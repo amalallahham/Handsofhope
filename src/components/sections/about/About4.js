@@ -13,7 +13,7 @@ const About4 = () => {
 							<div className="sec-heading style-4">
 								<div className="subtitle-text">
 									<span className="sub-title wow fadeInUp" data-wow-delay=".3s">
-										<i className="tji-box"></i>Get to Know Us
+										<i className="tji-manage"></i>Get to Know Us
 									</span>
 								</div>
 								<h2 className="sec-title title-highlight">

@@ -16,7 +16,7 @@ const RelatedProducts = () => {
 			<div className="sec-heading text-center">
 				<span className="sub-title wow fadeInUp" data-wow-delay="0.1s">
 					{" "}
-					<i className="tji-box"></i>
+					<i className="tji-manage"></i>
 					Related products
 				</span>
 				<h2 className="sec-title text-anim">Customers also bought</h2>

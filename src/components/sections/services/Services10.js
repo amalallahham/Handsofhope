@@ -11,7 +11,7 @@ const Services10 = () => {
 							<div className="heading-wrap-content">
 								<div className="sec-heading style-3">
 									<span className="sub-title wow fadeInUp" data-wow-delay=".3s">
-										<i className="tji-box"></i> Our Solutions
+										<i className="tji-manage"></i> Our Solutions
 									</span>
 									<h2 className="sec-title text-anim">
 										Tailor Business Solutions for Corporates.

@@ -36,7 +36,7 @@ const Faq3 = () => {
 					<div className="col-12">
 						<div className="sec-heading text-center">
 							<span className="sub-title wow fadeInUp" data-wow-delay=".1s">
-								<i className="tji-box"></i>Common Questions
+								<i className="tji-manage"></i>Common Questions
 							</span>
 							<h2 className="sec-title title-anim">
 								Need <span>Help?</span> Start Here...

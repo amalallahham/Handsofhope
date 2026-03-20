@@ -12,7 +12,7 @@ const Brands4 = () => {
 							<div className="sec-heading style-3">
 								<div className="subtitle-text">
 									<span className="sub-title wow fadeInUp" data-wow-delay=".3s">
-										<i className="tji-box"></i>Our PARTNERSHIP
+										<i className="tji-manage"></i>Our PARTNERSHIP
 									</span>
 									<FunfactSingle type={3} currentValue={30} symbol={"+"} />
 								</div>

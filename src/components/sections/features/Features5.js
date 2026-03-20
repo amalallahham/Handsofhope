@@ -29,7 +29,7 @@ const Features5 = ({ type }) => {
 					<div className="col-12">
 						<div className="sec-heading style-2 style-7 text-center">
 							<span className="sub-title wow fadeInUp" data-wow-delay=".3s">
-								<i className="tji-box"></i>Choose the Best
+								<i className="tji-manage"></i>Choose the Best
 							</span>
 							<h2 className="sec-title text-anim">
 								Empowering Business with Expertise.

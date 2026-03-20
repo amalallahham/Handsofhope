@@ -50,7 +50,7 @@ const Process3 = () => {
 						<div className="content-wrap slidebar-stickiy">
 							<div className="sec-heading style-2 style-6">
 								<span className="sub-title wow fadeInUp" data-wow-delay=".3s">
-									<i className="tji-box"></i>OUR PROCESS
+									<i className="tji-manage"></i>OUR PROCESS
 								</span>
 								<h2 className="sec-title title-anim">
 									Seamless Process and Great Results.

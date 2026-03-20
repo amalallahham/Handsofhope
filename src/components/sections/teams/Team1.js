@@ -44,7 +44,7 @@ const Team1 = ({ type }) => {
 								}`}
 							>
 								<span className="sub-title wow fadeInUp" data-wow-delay=".3s">
-									{type === 3 ? <i className="tji-box"></i> : ""}
+									{type === 3 ? <i className="tji-manage"></i> : ""}
 									Meet Our Team
 								</span>
 								{type === 3 ? (

@@ -16,7 +16,7 @@ const About3 = ({ type }) => {
 							<div className="about-img overflow-hidden">
 								<Image
 									data-speed=".8"
-									src="/images/about/about-5.webp"
+									src="/images/about/img.jpeg"
 									alt="Hands of Hope community support"
 									width={591}
 									height={639}
@@ -57,7 +57,7 @@ const About3 = ({ type }) => {
 						<div className="about-content-area">
 							<div className={`sec-heading ${type === 2 ? "" : "style-3"}`}>
 								<span className="sub-title wow fadeInUp" data-wow-delay=".3s">
-									<i className="tji-box"></i>Get to Know Us
+									<i className="tji-manage"></i>Get to Know Us
 								</span>
 
 								<h2 className="sec-title title-anim">

@@ -13,7 +13,7 @@ const Services3 = () => {
 					<div className="col-lg-12">
 						<div className="sec-heading style-3 text-center">
 							<span className="sub-title wow fadeInUp" data-wow-delay=".3s">
-								<i className="tji-box"></i>Our Solutions
+								<i className="tji-manage"></i>Our Solutions
 							</span>
 							<h2 className="sec-title title-anim">
 								Tailor Business Solutions for Corporates.

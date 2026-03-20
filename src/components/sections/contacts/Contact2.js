@@ -156,7 +156,7 @@ const Contact2 = () => {
 						<div className="contact-form style-2 wow fadeInUp" data-wow-delay=".4s">
 							<div className="sec-heading">
 								<span className="sub-title text-white">
-									<i className="tji-box"></i>Get in Touch
+									<i className="tji-manage"></i>Get in Touch
 								</span>
 								<h2 className="sec-title title-anim">
 									Drop Us a <span>Line.</span>

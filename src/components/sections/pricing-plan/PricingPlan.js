@@ -17,7 +17,7 @@ const PricingPlan = ({ type = 1 }) => {
 							}`}
 						>
 							<span className="sub-title wow fadeInUp" data-wow-delay=".3s">
-								{type === 2 || type === 3 ? <i className="tji-box"></i> : ""}{" "}
+								{type === 2 || type === 3 ? <i className="tji-manage"></i> : ""}{" "}
 								Pricing plan
 							</span>
 							<h2

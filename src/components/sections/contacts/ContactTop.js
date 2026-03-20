@@ -8,7 +8,7 @@ const ContactTop = () => {
           <div className="col-12">
             <div className="sec-heading text-center">
               <span className="sub-title wow fadeInUp" data-wow-delay=".1s">
-                <i className="tji-box"></i>Contact info
+                <i className="tji-manage"></i>Contact info
               </span>
               <h2 className="sec-title title-anim">
                 <span>Reach</span> Out to Us

@@ -19,7 +19,7 @@ const Testimonials4 = () => {
 						>
 							<div className="sec-heading style-4">
 								<span className="sub-title">
-									<i className="tji-box"></i>Get in Touch
+									<i className="tji-manage"></i>Get in Touch
 								</span>
 								<h2 className="sec-title title-anim">Drop us a Line Here.</h2>
 							</div>

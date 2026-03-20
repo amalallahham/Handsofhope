@@ -13,7 +13,7 @@ const Blogs10 = () => {
 							<div className="heading-wrap-content">
 								<div className="sec-heading style-3">
 									<span className="sub-title wow fadeInUp" data-wow-delay=".3s">
-										<i className="tji-box"></i>Insights & Ideas
+										<i className="tji-manage"></i>Insights & Ideas
 									</span>
 									<h2 className="sec-title text-anim">
 										The Ultimate Resource.

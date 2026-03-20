@@ -90,7 +90,7 @@ const Award1 = () => {
 					<div className="col-12">
 						<div className="sec-heading sec-heading-centered style-2 style-6 ">
 							<span className="sub-title wow fadeInUp" data-wow-delay=".3s">
-								<i className="tji-box"></i>Our Achievements
+								<i className="tji-manage"></i>Our Achievements
 							</span>
 							<h2 className="sec-title title-anim">
 								Our pursuit of perfection has recognized

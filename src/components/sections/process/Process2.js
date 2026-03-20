@@ -26,7 +26,7 @@ const Process2 = () => {
 					<div className="col-12">
 						<div className="sec-heading sec-heading-centered style-3">
 							<span className="sub-title wow fadeInUp" data-wow-delay=".3s">
-								<i className="tji-box"></i> OUR PROCESS
+								<i className="tji-manage"></i> OUR PROCESS
 							</span>
 							<h2 className="sec-title text-anim  text-white">
 								Seamless Process and Great Results.

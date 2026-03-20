@@ -42,7 +42,7 @@ const Features3 = () => {
 						<div className="h4-content-wrap text-center">
 							<div className="sec-heading style-4 text-center">
 								<span className="sub-title wow fadeInUp" data-wow-delay=".3s">
-									<i className="tji-box"></i>Choose the Best
+									<i className="tji-manage"></i>Choose the Best
 								</span>
 								<h2 className="sec-title title-anim">
 									Solutions Built for Business.
