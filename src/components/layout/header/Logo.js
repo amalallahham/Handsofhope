@@ -10,7 +10,7 @@ const Logo = ({ headerType, isStickyHeader }) => {
 					src={
 						
 					
-						 "/images/logos/logo-2.svg"
+						 "/images/logos/logo-3.svg"
 							
 					}
 					alt=""
