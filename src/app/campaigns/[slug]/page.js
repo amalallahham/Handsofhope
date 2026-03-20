@@ -29,6 +29,7 @@ export default async function PortfolioDetails({ params }) {
 	if(latestCampaignsError) {
 		console.error("Error fetching latest campaigns:", latestCampaignsError	);
 	}
+  
 
   if (error || !campaign) {
     notFound();
