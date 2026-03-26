@@ -11,6 +11,7 @@ const BlogDetailsPrimary = ({ option }) => {
   const { title, id, image_url, tags } = option || {};
 
   const categories = {
+    slug: option?.slug,
     event_date: option?.event_date,
     doors_open: option?.doors_open,
     venue: option?.venue,
@@ -19,6 +20,7 @@ const BlogDetailsPrimary = ({ option }) => {
     adult_price: option?.adult_price,
     child_price: option?.kid_price,
   };
+  console.log("categories", categories);  
 
   const isHappened = option?.event_date
     ? new Date(option?.event_date) < new Date()
@@ -39,6 +41,7 @@ const BlogDetailsPrimary = ({ option }) => {
     })
     .toLowerCase();
 
+    
   return (
     <section className="tj-blog-section section-gap slidebar-stickiy-container pt-5 ">
       <div className="container ">
@@ -563,7 +566,7 @@ const BlogDetailsPrimary = ({ option }) => {
 
           <div className="col-lg-4 blog-sidebar-col">
             <div className="sidebar-sticky-wrapper">
-              <BlogSidebar categories={categories} />
+              <BlogSidebar categories={categories}  />
             </div>
           </div>
         </div>

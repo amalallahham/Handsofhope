@@ -3,16 +3,19 @@ import BlogCategoriesWidget from "./widgets/BlogCategoriesWidget";
 import BlogTagsWidget from "./widgets/BlogTagsWidget";
 import RecentBlogWidget from "./widgets/RecentBlogWidget";
 
-const BlogSidebar = ({ categories }) => {
+const BlogSidebar = ({ categories, hideBtn }) => {
     const isHappened = categories?.event_date ? new Date(categories.event_date) < new Date() : false;
 
   return (
     <aside className={`tj-main-sidebar`}>
       {/* <!-- search --> */}
-     {!isHappened && (
+     {!isHappened && !hideBtn && (
         <div className="tj-sidebar-widget widget-search p-4">
-          <ButtonPrimary className="w-100" text={"Register Now"} type={"submit"} />
+          <ButtonPrimary className="w-100" text={"Register Now"}   url={`/events/${categories?.slug}/register`}
+ />
+          
         </div>
+        
       )}
       {/* <!-- recent post --> */}
   

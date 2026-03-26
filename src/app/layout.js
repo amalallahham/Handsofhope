@@ -1,4 +1,5 @@
 import { Mona_Sans } from "next/font/google";
+import { Metadata } from "next";
 import "react-range-slider-input/dist/style.css";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -16,6 +17,7 @@ import "./assets/css/nice-select2.css";
 import "./assets/css/odometer-theme-default.css";
 import "./globals.scss";
 
+
 const bodyFont = Mona_Sans({
 	variable: "--tj-ff-body",
 	subsets: ["latin"],
@@ -31,11 +33,34 @@ const headingFont = Mona_Sans({
 	display: "swap",
 });
 
-export const metadata = {
-	title: "Hands of Hope",
-	description: "Hands of Hope - Nonprofit Organization Dedicated to Providing Aid and Support to Those in Need",
-};
 
+export const metadata  = {
+  title: {
+    default: "Hands of Hope",
+    template: "Hands of Hope",
+  },
+  description: "Campaigns, events, and community updates.",
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  openGraph: {
+    title: "Hands of Hope",
+    description: "Campaigns, events, and community updates.",
+    url: "https://www.handsofhopeorg.ca/",
+    siteName: "Hands of Hope",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Hands of Hope",
+      },
+    ],
+  },
+};
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en" data-scroll-behavior="smooth" dir="ltr">

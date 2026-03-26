@@ -7,6 +7,7 @@ const HeroInner = ({
   breadcrums = [],
   withBorder = true,
   logo = false,
+  img
 }) => {
   return withBorder ? (
     <section
