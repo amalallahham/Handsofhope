@@ -190,6 +190,7 @@ export async function POST(req) {
             break;
           }
 
+          
           if (order.ticket_email_sent) {
             console.log(`Ticket email already sent for order ${orderId}`);
             break;
