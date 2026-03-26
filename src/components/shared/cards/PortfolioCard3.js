@@ -31,7 +31,7 @@ const PortfolioCard3 = ({ portfolio }) => {
             alt=""
             width={434}
             height={420}
-            style={{ height: "350px" }}
+            className="img-camp"
           />
         </div>
       </Link>

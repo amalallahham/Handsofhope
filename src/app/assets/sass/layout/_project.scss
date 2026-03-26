@@ -567,3 +567,10 @@ START: Project CSS
   height: auto !important;
   display: flex;
 }
+
+.img-camp {
+  height: 350px !important;
+  @media #{$sm, $xs, $md} {
+    height: 250px !important;
+  }
+}

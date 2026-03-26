@@ -1,6 +1,7 @@
 import ButtonPrimary from "@/components/shared/buttons/ButtonPrimary";
 import FunfactSingle from "@/components/shared/funfact/FunfactSingle";
 import PopupVideo from "@/components/shared/popup-video/PopupVideo";
+import Image from "next/image";
 import Link from "next/link";
 
 const About8 = () => {
@@ -28,10 +29,13 @@ const About8 = () => {
 								data-wow-delay=".3s"
 							>
 								<div className="about-img overflow-hidden">
-									<img
+									<Image
 										data-speed=".8"
 										src="/images/about/img.jpeg"
 										alt="Hands of Hope"
+										height={200}
+										width={400}
+
 										style={{ transform: 'translate(0, 0)' }}
 									/>
 								</div>
