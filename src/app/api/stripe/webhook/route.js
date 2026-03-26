@@ -72,7 +72,8 @@ export async function POST(req) {
                 title,
                 event_date,
                 venue,
-                address
+                address,
+                doors_open
               )
             `,
             )
@@ -113,7 +114,6 @@ export async function POST(req) {
             break;
           }
 
-          console.log(`Order ${orderId} marked as paid`);
 
           // Generate or retrieve tickets
           const adultQty = Number(metadata?.adultQty || order.adult_qty || 0);
@@ -173,9 +173,7 @@ export async function POST(req) {
             }
 
             finalTickets = insertedTickets || [];
-            console.log(
-              `Inserted ${finalTickets.length} tickets for order ${orderId}`,
-            );
+
           }
 
           // FIX: don't break if no email — mark ticket_email_sent so Stripe stops retrying
@@ -207,16 +205,27 @@ export async function POST(req) {
           const processingFeeCents = Math.round(subtotalCents * 0.029 + 30);
           const totalCents = subtotalCents + processingFeeCents;
 
+          const formattedDateRaw = new Date(order.events.event_date)
+            .toLocaleDateString("en-GB", {
+              day: "numeric",
+              month: "long",
+              year: "numeric",
+            })
+            .toLowerCase();
+
+          // capitalize first letter of month
+          const formattedDate = formattedDateRaw.replace(
+            /(\d+\s)([a-z])/,
+            (match, p1, p2) => p1 + p2.toUpperCase(),
+          );
+
           // ── Email strings (no nested template literals) ───────────────────
           const eventTitle = order.events?.title || "Your event";
-          const eventDate = order.events?.event_date
-            ? new Date(order.events.event_date).toLocaleString("en-CA", {
-                dateStyle: "medium",
-                timeStyle: "short",
-              })
-            : "TBD";
+          const eventDate = order.events?.event_date ? formattedDate : "";
+          const door_open = order.events?.doors_open || "";
 
-          console.log(eventDate, "eventDate ====================================================");
+
+
           const venue = order.events?.venue || "";
           const address = order.events?.address || "";
 
@@ -324,7 +333,7 @@ export async function POST(req) {
             "<tr>" +
             '<td style="padding:8px 0;font-size:14px;color:#6b7280;width:100px;">&#128197; Date</td>' +
             '<td style="padding:8px 0;font-size:14px;color:#111827;font-weight:600;">' +
-            eventDate +
+            eventDate + " " + (door_open ? `| Doors open at ${door_open}` : "") +
             "</td>" +
             "</tr>" +
             venueRow +
