@@ -54,6 +54,7 @@ export default async function EventDetailsPage({ params }) {
     console.error("Error fetching event data:", error);
   }
 
+  
   return (
     <div>
       <BackToTop />
