@@ -47,7 +47,7 @@ const BlogDetailsPrimary = ({ option }) => {
   );
 
   return (
-    <section className="tj-blog-section section-gap slidebar-stickiy-container pt-5 ">
+    <section className="tj-blog-section section-gap slidebar-stickiy-container ">
       <div className="container ">
         <div className="row row-gap-5 blog-details-row">
           <div className="col-lg-8 ">
