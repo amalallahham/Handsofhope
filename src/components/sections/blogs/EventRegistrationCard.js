@@ -38,6 +38,20 @@ const EventRegistrationCard = ({ items }) => {
     }).format(total);
   }, [total]);
 
+  const formattedDateRaw = new Date(items?.event_date)
+    .toLocaleDateString("en-GB", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    })
+    .toLowerCase();
+
+  // capitalize first letter of month
+  const formattedDate = formattedDateRaw.replace(
+    /(\d+\s)([a-z])/,
+    (match, p1, p2) => p1 + p2.toUpperCase(),
+  );
+
   const validate = () => {
     const newErrors = {};
 
@@ -349,7 +363,7 @@ const EventRegistrationCard = ({ items }) => {
           <div className="col-lg-4 blog-sidebar-col">
             <div className="sidebar-sticky-wrapper">
               <BlogSidebar
-                categories={{ ...items, child_price: items?.kid_price }}
+                categories={{ ...items, child_price: items?.kid_price , event_date: formattedDate }}
                 hideBtn={true}
               />
             </div>

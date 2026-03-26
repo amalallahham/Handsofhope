@@ -10,7 +10,7 @@ const BlogSidebar = ({ categories, hideBtn }) => {
     <aside className={`tj-main-sidebar`}>
       {/* <!-- search --> */}
      {!isHappened && !hideBtn && (
-        <div className="tj-sidebar-widget widget-search p-4">
+        <div className="tj-sidebar-widget widget-search p-4 hide-sm">
           <ButtonPrimary className="w-100" text={"Register Now"}   url={`/events/${categories?.slug}/register`}
  />
           

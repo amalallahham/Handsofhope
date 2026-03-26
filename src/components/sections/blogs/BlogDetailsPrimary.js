@@ -580,7 +580,7 @@ const formattedDate = formattedDateRaw.replace(
               </div> */}
                 {!isHappened && (
                   <div className="d-flex align-items-center justify-content-center border-top-dashed pt-4 w-100">
-                    <ButtonPrimary text={"Register Now"} type={"submit"} />
+                    <ButtonPrimary className="w-100" text={"Register Now"}   url={`/events/${categories?.slug}/register`} />
                   </div>
                 )}
               </div>

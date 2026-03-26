@@ -564,6 +564,12 @@ blockquote {
   }
 }
 
+.hide-sm {
+      @media #{$sm, $xs} {
+      display: none;
+    }
+}
+
 // sidebar
 .tj-main-sidebar {
   padding-inline-start: 20px;
