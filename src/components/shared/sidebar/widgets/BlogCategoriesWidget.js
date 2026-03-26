@@ -8,17 +8,9 @@ import Link from "next/link";
 
 const BlogCategoriesWidget = ({ categories }) => {
 
-  const formatDate = (dateString) => {
-    const date = new Date(dateString);
 
-    const day = String(date.getDate()).padStart(2, "0");
-    const month = String(date.getMonth() + 1).padStart(2, "0");
-    const year = date.getFullYear();
-
-    return `${day} - ${month} - ${year}`;
-  };
   const data = [
-    { title: "Event Date:", value: formatDate(categories?.event_date) },
+    { title: "Event Date:", value: categories?.event_date },
     { title: "Adult Price:", value: categories?.adult_price + "$"  , className: "golden-color"},
     { title: "Child Price:", value: categories?.child_price + "$" , className: "golden-color"},
     { title: "Doors Open:", value: categories?.doors_open },

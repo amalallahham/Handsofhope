@@ -10,9 +10,24 @@ const BlogDetailsPrimary = ({ option }) => {
   const { prevId, nextId, currentItem, isPrevItem, isNextItem } = option || {};
   const { title, id, image_url, tags } = option || {};
 
+
+  const formattedDateRaw = new Date(option?.event_date)
+  .toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  })
+  .toLowerCase();
+
+// capitalize first letter of month
+const formattedDate = formattedDateRaw.replace(
+  /(\d+\s)([a-z])/,
+  (match, p1, p2) => p1 + p2.toUpperCase()
+);
+
   const categories = {
     slug: option?.slug,
-    event_date: option?.event_date,
+    event_date: formattedDate,
     doors_open: option?.doors_open,
     venue: option?.venue,
     address: option?.address,
@@ -33,13 +48,7 @@ const BlogDetailsPrimary = ({ option }) => {
     (sponsor) => sponsor?.type !== "media_partner",
   );
 
-  const formattedDate = new Date(option?.event_date)
-    .toLocaleDateString("en-GB", {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-    })
-    .toLowerCase();
+
 
   return (
     <section className="tj-blog-section section-gap slidebar-stickiy-container pt-5 ">
