@@ -59,6 +59,8 @@ const BlogDetailsPrimary = ({ option }) => {
                   width={870}
                   height={450}
                   style={{ height: "auto" }}
+                  placeholder="blur"
+                  blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODcwIiBoZWlnaHQ9IjQ1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZTBlMGUwIi8+PC9zdmc+"
                 />
               </div>
               {!isHappened && (
@@ -148,7 +150,11 @@ const BlogDetailsPrimary = ({ option }) => {
                 </div>
 
                 <div className="blog-text">
-                  <p className="wow fadeInUp" data-wow-delay=".3s">
+                  <p
+                    className="wow fadeInUp"
+                    data-wow-delay=".3s"
+                    style={{ whiteSpace: "pre-line" }}
+                  >
                     {option?.description}
                   </p>
 
