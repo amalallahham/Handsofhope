@@ -9,6 +9,7 @@ import { notFound } from "next/navigation";
 // const items = getBlogs();
 import { supabase } from "@/../lib/supabase";
 import EventSuccessPopup from "@/components/sections/blogs/EventSuccessPopup";
+import { Suspense } from "react";
 
 export default async function EventDetailsPage({ params }) {
   const { slug } = await params;
@@ -62,7 +63,9 @@ export default async function EventDetailsPage({ params }) {
         <div>
           <main>
             <HeaderSpace />
-            <EventSuccessPopup />
+            <Suspense fallback={null}>
+              <EventSuccessPopup />
+            </Suspense>
             <BlogDetailsMain items={event} />
             <Cta />
           </main>
