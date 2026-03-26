@@ -10,20 +10,19 @@ const BlogDetailsPrimary = ({ option }) => {
   const { prevId, nextId, currentItem, isPrevItem, isNextItem } = option || {};
   const { title, id, image_url, tags } = option || {};
 
-
   const formattedDateRaw = new Date(option?.event_date)
-  .toLocaleDateString("en-GB", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  })
-  .toLowerCase();
+    .toLocaleDateString("en-GB", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    })
+    .toLowerCase();
 
-// capitalize first letter of month
-const formattedDate = formattedDateRaw.replace(
-  /(\d+\s)([a-z])/,
-  (match, p1, p2) => p1 + p2.toUpperCase()
-);
+  // capitalize first letter of month
+  const formattedDate = formattedDateRaw.replace(
+    /(\d+\s)([a-z])/,
+    (match, p1, p2) => p1 + p2.toUpperCase(),
+  );
 
   const categories = {
     slug: option?.slug,
@@ -35,7 +34,6 @@ const formattedDate = formattedDateRaw.replace(
     adult_price: option?.adult_price,
     child_price: option?.kid_price,
   };
-  console.log("categories", categories);
 
   const isHappened = option?.event_date
     ? new Date(option?.event_date) < new Date()
@@ -47,8 +45,6 @@ const formattedDate = formattedDateRaw.replace(
   const sponsors = option?.sponsors.filter(
     (sponsor) => sponsor?.type !== "media_partner",
   );
-
-
 
   return (
     <section className="tj-blog-section section-gap slidebar-stickiy-container pt-5 ">
@@ -65,6 +61,15 @@ const formattedDate = formattedDateRaw.replace(
                   style={{ height: "auto" }}
                 />
               </div>
+              {!isHappened && (
+                <div className="tj-sidebar-widget widget-search p-4 hide-lg">
+                  <ButtonPrimary
+                    className="w-100"
+                    text={"Register Now"}
+                    url={`/events/${categories?.slug}/register`}
+                  />
+                </div>
+              )}
 
               <div
                 className="card border-0 blog-category-two wow fadeInUp p-4"
@@ -79,7 +84,7 @@ const formattedDate = formattedDateRaw.replace(
                   {option?.event_collaborators.length > 0 && (
                     <div className="category-item">
                       {option?.event_collaborators[0]?.logo_url ? (
-                        <div >
+                        <div>
                           <Image
                             src={option?.event_collaborators[0]?.logo_url}
                             alt="Collaborator Logo"
@@ -580,7 +585,11 @@ const formattedDate = formattedDateRaw.replace(
               </div> */}
                 {!isHappened && (
                   <div className="d-flex align-items-center justify-content-center border-top-dashed pt-4 w-100">
-                    <ButtonPrimary className="w-100" text={"Register Now"}   url={`/events/${categories?.slug}/register`} />
+                    <ButtonPrimary
+                      className="w-100"
+                      text={"Register Now"}
+                      url={`/events/${categories?.slug}/register`}
+                    />
                   </div>
                 )}
               </div>

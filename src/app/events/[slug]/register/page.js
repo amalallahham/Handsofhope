@@ -13,7 +13,6 @@ import EventRegistrationCard from "@/components/sections/blogs/EventRegistration
 
 export default async function EventRegisterPage({ params }) {
   const { slug } = await params;
-  console.log("slug", slug);
 
   const { data: event, error } = await supabase
     .from("events")
@@ -48,7 +47,6 @@ export default async function EventRegisterPage({ params }) {
     console.error("Error fetching event data:", error);
   }
 
-  console.log("event", event);
 
     return (
         <div >

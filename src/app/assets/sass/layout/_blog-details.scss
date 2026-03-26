@@ -565,10 +565,12 @@ blockquote {
 }
 
 .hide-sm {
-      @media #{$sm, $xs} {
+      @media #{$sm, $xs, $md} {
       display: none;
     }
 }
+
+
 
 // sidebar
 .tj-main-sidebar {
@@ -1463,4 +1465,12 @@ blockquote {
   font-size: large;
   font-weight: var(--tj-fw-black);
   color: var(--tj-color-theme-primary-2) !important;
+}
+
+.hide-lg {
+      @media #{$sm, $xs, $md} {
+      display: block !important;
+    }
+
+    display: none;
 }
