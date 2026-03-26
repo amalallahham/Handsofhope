@@ -234,7 +234,7 @@ START: Blog Details CSS
 
 blockquote {
   position: relative;
-  padding: 40px 30px 30px;
+  padding: 25px;
   background: var(--tj-color-theme-bg);
   border: 2px solid var(--tj-color-theme-primary);
   border-radius: 12px;
@@ -243,7 +243,7 @@ blockquote {
   z-index: 2;
   &::before {
     content: "\e92e";
-    font-size: 40px;
+    font-size: 30px;
     color: var(--tj-color-theme-primary);
     font-family: "bexon-icons";
     display: inline-block;
@@ -1353,7 +1353,7 @@ blockquote {
 }
 
 .qty-btn-plus {
-  background: var(--tj-color-theme-dark-3);
+  background: var(--tj-color-theme-primary);
   color: #fff;
 }
 
@@ -1451,4 +1451,10 @@ blockquote {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
+}
+
+.golden-color {
+  font-size: large;
+  font-weight: var(--tj-fw-black);
+  color: var(--tj-color-theme-primary-2) !important;
 }

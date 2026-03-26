@@ -113,7 +113,7 @@ const Portfolios3 = () => {
                   className="project-slider-2"
                 >
                   {campaigns.map((campaign) => (
-                    <SwiperSlide key={campaign.id}>
+                    <SwiperSlide key={campaign.id} className="h-100">
                       <PortfolioCard3 portfolio={campaign} />
                     </SwiperSlide>
                   ))}

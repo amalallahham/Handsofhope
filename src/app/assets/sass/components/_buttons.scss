@@ -134,7 +134,28 @@
     @media #{$sm, $xs} {
       width: 20px;
       height: 20px;
-	  font-size: 12px;
+      font-size: 12px;
+    }
+  }
+  &:hover {
+    .btn-text {
+      span {
+        transform: translateY(-30px);
+      }
+    }
+    .btn-icon {
+      background-color: var(--tj-color-theme-primary);
+      i {
+        transform: rotate(0);
+      }
+    }
+  }
+}
+
+.campaing-btn {
+  .btn-text {
+    span {
+      color: var(--tj-color-heading-primary) !important;
     }
   }
   &:hover {

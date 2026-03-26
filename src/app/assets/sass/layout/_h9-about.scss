@@ -216,14 +216,15 @@ START: Home 9 About CSS
 	&-img {
 		max-width: 450px;
 		margin-inline-end: 0;
-		margin-top: -77px;
+		// margin-top: -77px;
+		height: stretch;
 		@media #{$md,$sm,$xs} {
 			max-width: 100%;
 			width: 100%;
 		}
 		.box-area {
 			max-width: 194px;
-			bottom: 0;
+			bottom: -2px;
 			inset-inline-end: 0;
 			inset-inline-start: inherit;
 			padding: 17px 0 0 28px;
@@ -248,7 +249,7 @@ START: Home 9 About CSS
 				width: 8px;
 				height: 8px;
 				border-radius: 50%;
-				background-color: var(--tj-color-theme-primary);
+				background-color: var(--tj-color-theme-primary-2);
 				position: absolute;
 				top: 13px;
 				inset-inline-start: 0;
@@ -257,6 +258,7 @@ START: Home 9 About CSS
 			.title {
 				font-weight: var(--tj-fw-sbold);
 				margin-bottom: 0;
+				color: var(--tj-color-theme-primary-2);
 			}
 			.designation {
 				font-size: 14px;

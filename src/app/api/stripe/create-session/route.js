@@ -38,6 +38,9 @@ export async function POST(req) {
         adultPriceCents,
         kidPriceCents,
         customerEmail,
+        full_name,
+        additional_note,
+        special_requests,
       } = body;
 
       if (!eventId || !eventName) {
@@ -138,6 +141,9 @@ export async function POST(req) {
           kid_qty: kid,
           total_cents: totalCents,
           customer_email: customerEmail || null,
+          customer_name: full_name || null,
+          additional_notes: additional_note || null,
+          special_requests: special_requests || null,
           status: "pending",
         })
         .select("id")

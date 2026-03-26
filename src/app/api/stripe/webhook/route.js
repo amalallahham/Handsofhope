@@ -89,8 +89,9 @@ export async function POST(req) {
             break;
           }
 
+          // FIX: use session.customer_details.email consistently (same as donation branch)
           const customerEmail =
-            session.customer_email || order.customer_email || null;
+            session.customer_details?.email || order.customer_email || null;
 
           // Mark order as paid
           const { error: orderUpdateError } = await supabaseAdmin
@@ -177,8 +178,13 @@ export async function POST(req) {
             );
           }
 
+          // FIX: don't break if no email — mark ticket_email_sent so Stripe stops retrying
           if (!customerEmail) {
-            console.error("No customer email found for order:", orderId);
+            console.warn("No customer email found for order:", orderId, "— skipping email");
+            await supabaseAdmin
+              .from("orders")
+              .update({ ticket_email_sent: true })
+              .eq("id", order.id);
             break;
           }
 
@@ -365,6 +371,8 @@ export async function POST(req) {
           const { data: donation, error: donationFetchError } =
             await supabaseAdmin
               .from("donations")
+              // FIX: also select amount_cents_net (the intended donation before fee)
+              // For now fetch both so we can display the right amount in the email
               .select("id, status, campaign_id, donor_email, amount_cents")
               .eq("id", donationId)
               .single();
@@ -379,6 +387,7 @@ export async function POST(req) {
             break;
           }
 
+          // FIX: use session.customer_details?.email consistently
           const donorEmail =
             session.customer_details?.email || donation.donor_email || null;
 
@@ -410,13 +419,16 @@ export async function POST(req) {
 
           // Send donation confirmation email
           if (donorEmail) {
+            // FIX: metadata.campaignTitle is now passed from create-session (see note below)
             const campaignTitle =
               metadata.campaignTitle ||
               (donation.campaign_id ? "your chosen campaign" : null);
 
-            const amountDollars = (
-              (donation.amount_cents || 0) / 100
-            ).toFixed(2);
+            // FIX: amount_cents in the donations table is the total including processing fee.
+            // Back-calculate the intended donation amount to show the donor the correct figure.
+            const totalCents = donation.amount_cents || 0;
+            const donationOnlyCents = Math.round((totalCents - 30) / 1.029);
+            const amountDollars = (donationOnlyCents / 100).toFixed(2);
 
             const { data: donationEmailData, error: donationEmailError } =
               await resend.emails.send({

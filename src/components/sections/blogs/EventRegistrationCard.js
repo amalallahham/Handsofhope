@@ -11,7 +11,7 @@ const EventRegistrationCard = ({ items }) => {
     email: "",
     adultQty: 0,
     kidQty: 0,
-    kidSpecialRamadan: "",
+    additionalNote: "",
     specialRequests: "",
   });
   const [loading, setLoading] = useState(false);
@@ -143,6 +143,9 @@ const EventRegistrationCard = ({ items }) => {
         kidPriceCents: Number(items?.kid_price || 0) * 100,
         customerEmail: formData.email,
         eventSlug: items?.slug,
+        full_name: formData.fullName,
+        additional_note: formData.additionalNote,
+        special_requests: formData.specialRequests,
       };
 
       const res = await fetch("/api/stripe/create-session", {
@@ -307,10 +310,10 @@ const EventRegistrationCard = ({ items }) => {
                         special.
                       </label>
                       <textarea
-                        name="kidSpecialRamadan"
+                        name="additionalNote"
                         className="form-control custom-input"
                         rows={4}
-                        value={formData.kidSpecialRamadan}
+                        value={formData.additionalNote}
                         onChange={handleChange}
                       />
                     </div>

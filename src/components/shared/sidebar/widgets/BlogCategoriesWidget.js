@@ -19,8 +19,8 @@ const BlogCategoriesWidget = ({ categories }) => {
   };
   const data = [
     { title: "Event Date:", value: formatDate(categories?.event_date) },
-    { title: "Adult Price:", value: categories?.adult_price + "$" },
-    { title: "Child Price:", value: categories?.child_price + "$" },
+    { title: "Adult Price:", value: categories?.adult_price + "$"  , className: "golden-color"},
+    { title: "Child Price:", value: categories?.child_price + "$" , className: "golden-color"},
     { title: "Doors Open:", value: categories?.doors_open },
     { title: "Venue:", value: categories?.venue },
     { title: "Address:", value: categories?.address },
@@ -36,7 +36,7 @@ const BlogCategoriesWidget = ({ categories }) => {
           <li key={idx}>
             <p>
               {category?.title}{" "}
-              <span className="number">
+              <span className={`number ${category?.className || ""}`}>
                 
                
 

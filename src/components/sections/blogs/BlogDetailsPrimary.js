@@ -20,7 +20,7 @@ const BlogDetailsPrimary = ({ option }) => {
     adult_price: option?.adult_price,
     child_price: option?.kid_price,
   };
-  console.log("categories", categories);  
+  console.log("categories", categories);
 
   const isHappened = option?.event_date
     ? new Date(option?.event_date) < new Date()
@@ -41,7 +41,6 @@ const BlogDetailsPrimary = ({ option }) => {
     })
     .toLowerCase();
 
-    
   return (
     <section className="tj-blog-section section-gap slidebar-stickiy-container pt-5 ">
       <div className="container ">
@@ -70,14 +69,28 @@ const BlogDetailsPrimary = ({ option }) => {
                 >
                   {option?.event_collaborators.length > 0 && (
                     <div className="category-item">
-                      <div className="cate-icons">
-                        <Image
-                          src="/icons/collaboration.svg"
-                          alt="Images"
-                          width={25}
-                          height={25}
-                        />
-                      </div>
+                      {option?.event_collaborators[0]?.logo_url ? (
+                        <div >
+                          <Image
+                            src={option?.event_collaborators[0]?.logo_url}
+                            alt="Collaborator Logo"
+                            width={50}
+                            height={50}
+                          />
+                        </div>
+                      ) : (
+                        <div className="cate-icons">
+                          <Image
+                            src={
+                              option?.event_collaborators[0]?.logo_url ||
+                              "/icons/collaboration.svg"
+                            }
+                            alt="Images"
+                            width={25}
+                            height={25}
+                          />
+                        </div>
+                      )}
 
                       <div className="cate-text">
                         <span className="degination">Collaboration with</span>
@@ -128,6 +141,7 @@ const BlogDetailsPrimary = ({ option }) => {
                   {option?.collaboration_note && (
                     <blockquote className="wow fadeInUp" data-wow-delay=".3s">
                       <p>{option?.collaboration_note}</p>
+                      <cite>{option?.event_collaborators?.[0]?.name}</cite>
                     </blockquote>
                   )}
 
@@ -566,7 +580,7 @@ const BlogDetailsPrimary = ({ option }) => {
 
           <div className="col-lg-4 blog-sidebar-col">
             <div className="sidebar-sticky-wrapper">
-              <BlogSidebar categories={categories}  />
+              <BlogSidebar categories={categories} />
             </div>
           </div>
         </div>
