@@ -24,7 +24,6 @@ export default async function BlogRightSidebar() {
     console.error("Error fetching events:", error.message);
   }
 
-
   return (
     <div>
       <BackToTop />
@@ -33,7 +32,12 @@ export default async function BlogRightSidebar() {
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main>
-            <HeaderSpace /> <HeroInner title={"Events"} text={"Events"} />
+            <HeaderSpace />
+            <HeroInner
+              title={"Events"}
+              text={"Events"}
+              bgImage={"/images/bg/events-bg10.jpg"}
+            />
             <BlogsGridPrimary items={events} />
             <Cta />
           </main>

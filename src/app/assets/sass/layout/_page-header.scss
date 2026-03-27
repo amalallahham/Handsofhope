@@ -10,7 +10,8 @@ START: Breadcrumb CSS
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: var(--tj-color-theme-dark-6);
+    // background-color: var(--tj-color-theme-dark-6);
+    background-color: rgba(24, 54, 0, 0.671);
     background-blend-mode: luminosity;
     border-radius: 12px;
     position: relative;
@@ -29,11 +30,11 @@ START: Breadcrumb CSS
 
   &-header-green {
     background-color: var(--tj-color-heading-primary-2);
-     background-blend-mode: luminosity;
-
+    background-blend-mode: luminosity;
   }
   &-title {
     color: var(--tj-color-common-white);
+    color: #1f1f1f;
     line-height: 1;
     margin-bottom: 0;
   }
@@ -84,9 +85,8 @@ START: Breadcrumb CSS
       margin-top: 25px;
     }
   }
-  
+
   &-link-2 {
-    
     margin: 15px 25px;
     display: inline-flex;
     flex-wrap: wrap;

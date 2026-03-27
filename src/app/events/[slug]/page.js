@@ -9,13 +9,13 @@ import { notFound } from "next/navigation";
 // const items = getBlogs();
 import { supabase } from "@/../lib/supabase";
 
-
 export default async function EventDetailsPage({ params }) {
   const { slug } = await params;
 
   const { data: event, error } = await supabase
     .from("events")
-    .select(`
+    .select(
+      `
       id,
       slug,
       title,
@@ -42,43 +42,37 @@ export default async function EventDetailsPage({ params }) {
         website_url
         
       )
-    `)
+    `,
+    )
     .eq("slug", slug)
     .maybeSingle();
 
-
-
   if (error || !event) {
     // notFound();
-	console.error("Error fetching event data:", error);
+    console.error("Error fetching event data:", error);
   }
 
-	return (
-		<div >
-			<BackToTop />
-			<Header />
-			<Header isStickyHeader={true} />
-			<div >
-				<div >
-					<main>
-						<HeaderSpace />
-						<BlogDetailsMain items={event} />
-						<Cta />
-					</main>
-					<Footer />
-				</div>
-
-			</div>
-			<ClientWrapper />
-		</div>
-	);
-
-
+  return (
+    <div>
+      <BackToTop />
+      <Header />
+      <Header isStickyHeader={true} />
+      <div>
+        <div>
+          <main>
+            <HeaderSpace />
+            <BlogDetailsMain items={event} />
+            <Cta />
+          </main>
+          <Footer />
+        </div>
+      </div>
+      <ClientWrapper />
+    </div>
+  );
 }
 export async function generateStaticParams() {
-  const { data: events } = await supabase
-    .from("events")
-    .select("slug");
+  const { data: events } = await supabase.from("events").select("slug");
 
   return (events || []).map((event) => ({
     slug: event.slug,

@@ -1,20 +1,26 @@
 import sliceText from "@/libs/sliceText";
 import Link from "next/link";
 import React from "react";
+
 const HeroInner = ({
   title,
   text,
   breadcrums = [],
   withBorder = true,
   logo = false,
+  bgImage,
 }) => {
   return withBorder ? (
     <section
       className={`tj-page-header ${logo ? "tj-page-header-green" : ""}  section-gap-x`}
       style={{
-        backgroundImage: !logo
-          ? `url('/images/bg/header-9.svg')`
-          : `url('/images/bg/header-logo.svg')`,
+        backgroundImage: bgImage
+          ? `url('${bgImage}')`
+          : !logo
+            ? `url('/images/bg/header-9.svg')`
+            : `url('/images/bg/header-logo.svg')`,
+        backgroundSize: bgImage ? "cover" : "",
+        backgroundPosition: bgImage ? "center" : "",
       }}
     >
       <div className="container">
@@ -52,10 +58,10 @@ const HeroInner = ({
           </div>
         </div>
       </div>
-      <div
+      {/* <div
         className="page-header-overlay"
         // style={{ backgroundImage: `url('/images/shape/pheader-overlay.webp')` }}
-      ></div>
+      ></div> */}
     </section>
   ) : (
     <>
