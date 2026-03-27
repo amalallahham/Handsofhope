@@ -242,7 +242,7 @@ START: Blog Details CSS
 
 blockquote {
   position: relative;
-  padding: 25px;
+  padding: 1rem;
   background: var(--tj-color-theme-bg);
   border: 2px solid var(--tj-color-theme-primary);
   border-radius: 12px;
@@ -251,18 +251,18 @@ blockquote {
   z-index: 2;
   &::before {
     content: "\e92e";
-    font-size: 30px;
+    font-size: 18px;
     color: var(--tj-color-theme-primary);
     font-family: "bexon-icons";
     display: inline-block;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     line-height: 1;
   }
   p {
     color: var(--tj-color-heading-primary);
     font-family: var(--tj-ff-heading);
     font-weight: var(--tj-fw-sbold);
-    font-size: 24px;
+    font-size: 17px;
     margin-bottom: 20px !important;
     letter-spacing: -0.6px;
     line-height: 1.417;

@@ -159,8 +159,18 @@ const BlogDetailsPrimary = ({ option }) => {
                     <div className="cate-text">
                       <span className="degination">Tickets</span>
                       <div className="text d-flex flex-column">
-                        <p className="mb-0">Adult: <span className="color-green">{option?.adult_price}$</span></p>
-                        <p className="mb-0">Child: <span className="color-green">{option?.kid_price}$</span></p>
+                        <p className="mb-0">
+                          Adult:{" "}
+                          <span className="color-green">
+                            {option?.adult_price}$
+                          </span>
+                        </p>
+                        <p className="mb-0">
+                          Child:{" "}
+                          <span className="color-green">
+                            {option?.kid_price}$
+                          </span>
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -176,8 +186,13 @@ const BlogDetailsPrimary = ({ option }) => {
                   </p>
 
                   {option?.collaboration_note && (
-                    <blockquote className="wow fadeInUp" data-wow-delay=".3s">
-                      <p>{option?.collaboration_note}</p>
+                    <blockquote
+                      className="wow fadeInUp my-2"
+                      data-wow-delay=".3s"
+                    >
+                      <p style={{ whiteSpace: "pre-line" }} className="mb-1">
+                        {option?.collaboration_note}
+                      </p>
                       <cite>{option?.event_collaborators?.[0]?.name}</cite>
                     </blockquote>
                   )}
