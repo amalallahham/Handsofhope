@@ -60,7 +60,7 @@ const PortfolioDetailsPrimary = ({ option, campaign, latestCampaigns }) => {
   const progress = goal > 0 ? Math.min((raised / goal) * 100, 100) : 0;
 
   return (
-    <section className="tj-blog-section section-gap pt-5">
+    <section className="tj-blog-section section-gap-1 pt-5">
       <div className="container">
         <div className="row rg-50">
           <div className="col-lg-8">

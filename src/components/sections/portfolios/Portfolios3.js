@@ -42,7 +42,7 @@ const Portfolios3 = () => {
           <div className="col-12">
             <div className="sec-heading-wrap">
               <span className="sub-title wow fadeInUp" data-wow-delay=".3s">
-                <i className="tji-manage"></i>Active Campaigns
+                <i className="tji-organize"></i> Campaigns
               </span>
               <div className="heading-wrap-content">
                 <div className="sec-heading style-3">

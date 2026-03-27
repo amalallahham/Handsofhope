@@ -9,11 +9,11 @@ const Logo = ({ headerType, isStickyHeader }) => {
         <Image
           src="/images/logos/logo.png"
           alt="Hands of Hope logo"
-          width={544}
-          height={152}
+          width={550}
+          height={170}
           style={{
             width: "100%",
-            maxWidth: "544px",
+            maxWidth: "550px",
             height: "auto",
             display: "block",
           }}
