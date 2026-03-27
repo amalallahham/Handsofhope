@@ -60,7 +60,7 @@ START: Theme Default CSS
 	position: relative;
 }
 body {
-
+	overflow-x: hidden;
 	font-family: var(--tj-ff-body);
 	font-size: var(--tj-fs-body);
 	font-weight: normal;

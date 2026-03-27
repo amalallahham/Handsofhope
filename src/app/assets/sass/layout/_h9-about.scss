@@ -221,6 +221,7 @@ START: Home 9 About CSS
     @media #{$md,$sm,$xs} {
       max-width: 100%;
       width: 100%;
+	  height: auto;
     }
     .box-area {
       @media #{$sm,$xs} {

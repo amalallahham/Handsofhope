@@ -311,6 +311,10 @@ START: Project CSS
   .project-content {
     padding: 25px 20px 25px 30px;
     height: stretch;
+
+    @media #{$md,$sm,$xs} {
+      height: auto;
+    }
   }
   .project-text {
     display: flex;
