@@ -7,9 +7,7 @@ const PortfolioCard3 = ({ portfolio }) => {
     title = "Campaign",
     poster_url = portfolio?.poster_url || "/assets/img/project/3.jpg",
     status,
-    id,
     slug,
-    dataFilter,
     tags,
   } = portfolio ? portfolio : {};
 
@@ -30,7 +28,7 @@ const PortfolioCard3 = ({ portfolio }) => {
             src={poster_url}
             alt=""
             width={434}
-            height={420}
+            height={370}
             className="img-camp"
           />
         </div>

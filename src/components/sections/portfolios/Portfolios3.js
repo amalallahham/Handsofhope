@@ -10,13 +10,14 @@ const Portfolios3 = () => {
   const [campaigns, setCampaigns] = useState([]);
   const [loading, setLoading] = useState(true);
 
+
   useEffect(() => {
     const getCampaigns = async () => {
       const { data, error } = await supabase
         .from("campaigns")
-        .select("*")
+        .select("id, title, poster_url, status, slug, tags")
         .eq("is_published", true)
-        .order("created_at", { ascending: false });
+        .order("created_at", { ascending: false }).limit(6);
 
       if (error) {
         console.error("Error fetching campaigns:", error);
