@@ -173,6 +173,7 @@ START: Blog Details CSS
       .title {
         font-weight: var(--tj-fw-sbold);
         margin-bottom: 0;
+
         @media #{$xl, $md, $sm, $xs} {
           font-size: 16px;
         }
@@ -207,6 +208,13 @@ START: Blog Details CSS
       font-weight: var(--tj-fw-sbold);
       line-height: 1;
       margin-bottom: 0;
+      p {
+        font-weight: var(--tj-fw-medium);
+        span {
+          color: var(--tj-color-theme-primary);
+          font-weight: var(--tj-fw-sbold);
+        }
+      }
       @media #{$xl, $md, $sm, $xs} {
         font-size: 16px;
       }
@@ -565,12 +573,10 @@ blockquote {
 }
 
 .hide-sm {
-      @media #{$sm, $xs, $md} {
-      display: none;
-    }
+  @media #{$sm, $xs, $md} {
+    display: none;
+  }
 }
-
-
 
 // sidebar
 .tj-main-sidebar {
@@ -1079,6 +1085,15 @@ blockquote {
   justify-content: center;
   margin-bottom: 10px;
 
+  &.collaborator {
+    border-radius: 0px !important;
+  }
+
+  &.collaborator-2 {
+    border-radius: 0px !important;
+    width: 125px;
+  }
+
   img {
     width: 100%;
     height: 100%;
@@ -1263,7 +1278,6 @@ blockquote {
   background-color: #6c757d; // gray
   color: white;
 }
-
 
 .event-registration-form .form-label {
   font-weight: 600;
@@ -1468,9 +1482,9 @@ blockquote {
 }
 
 .hide-lg {
-      @media #{$sm, $xs, $md} {
-      display: block !important;
-    }
+  @media #{$sm, $xs, $md} {
+    display: block !important;
+  }
 
-    display: none;
+  display: none;
 }

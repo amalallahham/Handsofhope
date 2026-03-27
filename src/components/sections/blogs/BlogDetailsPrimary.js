@@ -83,7 +83,7 @@ const BlogDetailsPrimary = ({ option }) => {
                   className="blog-category-two wow w-100 fadeInUp"
                   data-wow-delay=".3s"
                 >
-                  {option?.event_collaborators.length > 0 && (
+                  {/* {option?.event_collaborators.length > 0 && (
                     <div className="category-item">
                       {option?.event_collaborators[0]?.logo_url ? (
                         <div>
@@ -122,7 +122,7 @@ const BlogDetailsPrimary = ({ option }) => {
                         )}
                       </div>
                     </div>
-                  )}
+                  )} */}
 
                   <div className="category-item">
                     <div className="cate-icons">
@@ -147,6 +147,23 @@ const BlogDetailsPrimary = ({ option }) => {
                       <h6 className="text"> {option?.doors_open}</h6>
                     </div>
                   </div>
+                  <div className="category-item">
+                    <div className="cate-icons">
+                      <Image
+                        src={"/icons/tickets.svg"}
+                        alt="Images"
+                        width={40}
+                        height={40}
+                      />
+                    </div>
+                    <div className="cate-text">
+                      <span className="degination">Tickets</span>
+                      <div className="text d-flex flex-column">
+                        <p className="mb-0">Adult: <span className="color-green">{option?.adult_price}$</span></p>
+                        <p className="mb-0">Child: <span className="color-green">{option?.kid_price}$</span></p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 <div className="blog-text">
@@ -163,6 +180,42 @@ const BlogDetailsPrimary = ({ option }) => {
                       <p>{option?.collaboration_note}</p>
                       <cite>{option?.event_collaborators?.[0]?.name}</cite>
                     </blockquote>
+                  )}
+                  {option?.event_collaborators?.length > 0 && (
+                    <section className="border-top-dashed py-4">
+                      <h3 className="wow fadeInUp" data-wow-delay=".3s">
+                        Organized by
+                      </h3>
+
+                      <div className="sponsors-grid-2 wow fadeInUp">
+                        {option?.event_collaborators?.map((collaborator, i) => (
+                          <div key={i} className="sponsor-card-2">
+                            <div className="sponsor-image-2 collaborator">
+                              <Image
+                                src={collaborator.logo_url}
+                                alt={collaborator.name}
+                                width={100}
+                                height={100}
+                              />
+                            </div>
+                            <p className="sponsor-name-2">
+                              {collaborator.name}
+                            </p>
+                          </div>
+                        ))}
+                        <div className="sponsor-card-2">
+                          <div className="sponsor-image-2 collaborator-2">
+                            <Image
+                              src={"/images/logos/logo-bg-white.png"}
+                              alt="Hands Of Hope"
+                              width={500}
+                              height={500}
+                            />
+                          </div>
+                          <p className="sponsor-name-2">Hands Of Hope</p>
+                        </div>
+                      </div>
+                    </section>
                   )}
 
                   {sponsors?.length > 0 && (

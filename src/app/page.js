@@ -13,8 +13,42 @@ import Portfolios3 from "@/components/sections/portfolios/Portfolios3";
 import BackToTop from "@/components/shared/others/BackToTop";
 import HeaderSpace from "@/components/shared/others/HeaderSpace";
 import ClientWrapper from "@/components/shared/wrappers/ClientWrapper";
+import { supabase } from "../../lib/supabase";
 
-export default function Home() {
+export default async function Home() {
+  const { data: campaigns, error } = await supabase
+    .from("campaigns")
+    .select("id, title, poster_url, status, slug, tags")
+    .eq("is_published", true)
+    .order("created_at", { ascending: false })
+    .limit(6);
+
+  if (error) {
+    console.error("Error fetching campaigns:", error);
+  }
+
+  const { data: events, error: eventError } = await supabase
+    .from("events")
+    .select(
+      `id,
+			title,
+			slug,
+			image_url,
+			event_date,
+			venue,
+			address,
+			event_collaborators (
+			id,
+			name,
+			logo_url
+        )`,
+    )
+    .order("event_date", { ascending: false }) // latest first
+    .limit(3);
+  if (eventError) {
+    console.error("Error fetching events:", eventError);
+  }
+
   return (
     <div>
       <BackToTop />
@@ -28,10 +62,9 @@ export default function Home() {
             <Features2 />
             <FeatureMarquee />
 
-
             <About8 />
-            <Portfolios3 />
-            <Blogs8 />
+            <Portfolios3 campaigns={campaigns} />
+            <Blogs8 events={events} />
 
             <Faq2 type={1} />
             <Contact2 />

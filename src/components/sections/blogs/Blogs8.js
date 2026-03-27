@@ -3,42 +3,17 @@
 import { useEffect, useState } from "react";
 import ButtonPrimary from "@/components/shared/buttons/ButtonPrimary";
 import BlogCard8 from "@/components/shared/cards/BlogCard8";
-import { supabase } from "@/../lib/supabase";
 
-const Blogs8 = () => {
-  const [events, setEvents] = useState([]);
+const Blogs8 = ({ events }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const getEvents = async () => {
-      const { data, error } = await supabase
-        .from("events")
-        .select(
-          `id,
-			title,
-			slug,
-			image_url,
-			event_date,
-			venue,
-			address,
-			event_collaborators (
-			id,
-			name,
-			logo_url
-        )`,
-        )
-        .order("event_date", { ascending: false }) // latest first
-        .limit(3);
-      if (error) {
-        console.error("Error fetching events:", error);
-      } else {
-        setEvents(data || []);
-      }
-
+    console.log("Received events data:", events);
+    if (!events || events.length === 0) {
+      console.error("No events data available.");
+    } else {
       setLoading(false);
-    };
-
-    getEvents();
+    }
   }, []);
 
   return events?.length === 0 && !loading ? (

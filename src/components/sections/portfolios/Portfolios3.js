@@ -2,38 +2,22 @@
 
 import { use, useEffect, useState } from "react";
 import PortfolioCard3 from "@/components/shared/cards/PortfolioCard3";
-import { supabase } from "@/../lib/supabase";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-const Portfolios3 = () => {
-  const [campaigns, setCampaigns] = useState([]);
+const Portfolios3 = ({ campaigns }) => {
+  // const [campaigns, setCampaigns] = useState([]);
   const [loading, setLoading] = useState(true);
 
-
   useEffect(() => {
-    const getCampaigns = async () => {
-      const { data, error } = await supabase
-        .from("campaigns")
-        .select("id, title, poster_url, status, slug, tags")
-        .eq("is_published", true)
-        .order("created_at", { ascending: false }).limit(6);
-
-      if (error) {
-        console.error("Error fetching campaigns:", error);
-      } else {
-        setCampaigns(data || []);
-      }
-
+    if (!campaigns || campaigns.length === 0) {
+      console.error("No campaigns data available.");
+      
+    } else {
       setLoading(false);
-    };
+    }
 
-    getCampaigns();
   }, []);
-
-
-
-
 
   return (
     <section className="tj-project-section-3 section-gap section-gap-x">
