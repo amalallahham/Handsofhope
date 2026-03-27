@@ -257,6 +257,10 @@ blockquote {
     display: inline-block;
     margin-bottom: 16px;
     line-height: 1;
+    @media #{$sm, $xs} {
+      font-size: 13px;
+      margin-bottom: 10px !important;
+    }
   }
   p {
     color: var(--tj-color-heading-primary);
@@ -268,7 +272,7 @@ blockquote {
     line-height: 1.417;
     border-radius: 12px;
     @media #{$sm, $xs} {
-      font-size: 20px;
+      font-size: 13px;
       margin-bottom: 15px !important;
     }
   }
@@ -289,9 +293,17 @@ blockquote {
       margin-inline-end: 10px;
       position: relative;
     }
+
+      @media #{$sm, $xs} {
+        margin-top: 0.5rem;
+      font-size: 13px;
+      &::before {
+        width: 30px;
+      }
+    }
   }
   @media #{$sm, $xs} {
-    padding: 25px 15px;
+    padding: 1rem;
     margin-bottom: 40px;
   }
 }

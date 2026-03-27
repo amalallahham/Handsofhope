@@ -19,7 +19,7 @@ export default async function BlogRightSidebar() {
     event_date`,
     )
     .eq("is_published", true)
-    .order("event_date", { ascending: true });
+    .order("event_date", { ascending: false });
   if (error) {
     console.error("Error fetching events:", error.message);
   }
