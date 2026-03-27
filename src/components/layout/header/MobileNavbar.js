@@ -9,7 +9,8 @@ const MobileNavbar = () => {
   const items = [
     { id: 1, name: "Campaigns", path: "/campaigns" },
     { id: 2, name: "Events", path: "/events" },
-    { id: 3, name: "Contact", path: "/contact" },
+    { id: 3, name: "About Us", path: "/about" },
+    { id: 4, name: "Contact", path: "/contact" },
   ];
 
   return (
