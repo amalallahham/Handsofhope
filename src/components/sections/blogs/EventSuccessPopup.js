@@ -308,6 +308,11 @@ export default function EventSuccessPopup() {
               </svg>
               Your tickets have been sent to your email address.
             </div>
+          
+              <p className="esp-message mx-1 mt-2">
+                If you don't see it within a few minutes, please check your spam
+                folder or contact support.{" "}
+              </p>
           </div>
 
           <div className="esp-footer">
