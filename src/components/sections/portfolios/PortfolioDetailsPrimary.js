@@ -23,6 +23,8 @@ const PortfolioDetailsPrimary = ({ option, campaign, latestCampaigns }) => {
     slug,
   } = campaign || {};
 
+  console.log("Campaign data in PortfolioDetailsPrimary:", campaign);
+
   const formatCurrency = (value) => {
     const amount = value;
     return new Intl.NumberFormat("en-CA", {
@@ -88,40 +90,43 @@ const PortfolioDetailsPrimary = ({ option, campaign, latestCampaigns }) => {
                 </p>
               </div>
 
-              <h4 className="wow fadeInUp mt-5" data-wow-delay=".3s">
-                Campaign Progress
-              </h4>
+              {status !== "closed" && (
+                <div>
+                  <h4 className="wow fadeInUp mt-5" data-wow-delay=".3s">
+                    Campaign Progress
+                  </h4>
 
-              <div
-                className="progress-wrapper wow fadeInUp"
-                data-wow-delay=".3s"
-              >
-                <div className="progress-header">
-                  <span className="raised">{formatCurrency(raised)}</span>
-                  <span className="goal">{formatCurrency(goal)}</span>
-                </div>
-
-                <div className="campaign-progress-bar">
                   <div
-                    className="campaign-progress-fill"
-                    style={{
-                      width: progress > 0 ? `${progress}%` : "8px",
-                    }}
-                  />
+                    className="progress-wrapper wow fadeInUp"
+                    data-wow-delay=".3s"
+                  >
+                    <div className="progress-header">
+                      <span className="raised">{formatCurrency(raised)}</span>
+                      <span className="goal">{formatCurrency(goal)}</span>
+                    </div>
+
+                    <div className="campaign-progress-bar">
+                      <div
+                        className="campaign-progress-fill"
+                        style={{
+                          width: progress > 0 ? `${progress}%` : "8px",
+                        }}
+                      />
+                    </div>
+                  </div>
                 </div>
-              </div>
+              )}
 
               <div className="blog-text mt-4">
-                <p className="wow fadeInUp" data-wow-delay=".3s">
+                {/* <p className="wow fadeInUp" data-wow-delay=".3s">
                   {description || "No campaign description available."}
-                </p>
+                </p> */}
 
                 {video_url && (
                   <div
                     className="about-btn-area-2 wow fadeInUp mt-4"
                     data-wow-delay=".7s"
                   >
-
                     <PopupVideo>
                       <Link
                         className="video-btn video-popup glightbox"
@@ -233,7 +238,10 @@ const PortfolioDetailsPrimary = ({ option, campaign, latestCampaigns }) => {
                 className="tj-sidebar-widget widget-feature-item wow fadeInUp p-0"
                 data-wow-delay=".3s"
               >
-                <RecentBlogWidget title="Recent Campaigns" recentBlogs={latestCampaigns} />
+                <RecentBlogWidget
+                  title="Recent Campaigns"
+                  recentBlogs={latestCampaigns}
+                />
               </div>
             </aside>
           </div>

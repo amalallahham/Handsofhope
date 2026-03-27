@@ -10,10 +10,10 @@ const RecentBlogWidget = ({ title, recentBlogs }) => {
       <h4 className="widget-title">{title}</h4>
       <ul>
         {recentBlogs?.length
-          ? recentBlogs?.map(({ id, poster_url, title, status }, idx) => (
+          ? recentBlogs?.map(({ id, poster_url, title, status, slug }, idx) => (
               <li key={idx}>
                 <div className="post-thumb">
-                  <Link href={`/blogs/${id}`}>
+                  <Link href={`/campaigns/${slug}`}>
                     {" "}
                     <Image
                       src={poster_url}
@@ -26,7 +26,7 @@ const RecentBlogWidget = ({ title, recentBlogs }) => {
                 </div>
                 <div className="post-content">
                   <h6 className="post-title">
-                    <Link href={`/blogs/${id}`}>
+                    <Link href={`/campaigns/${slug}`}>
                       {sliceText(title, 32, true)}
                     </Link>
                   </h6>
