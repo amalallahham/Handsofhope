@@ -11,6 +11,7 @@ const EventRegistrationCard = ({ items }) => {
     email: "",
     adultQty: 0,
     kidQty: 0,
+    phone: "",
     additionalNote: "",
     specialRequests: "",
   });
@@ -19,6 +20,7 @@ const EventRegistrationCard = ({ items }) => {
   const nameRef = useRef(null);
   const emailRef = useRef(null);
   const ticketsRef = useRef(null);
+  const phoneRef = useRef(null);
 
   const total = useMemo(() => {
     const adultTotal = formData.adultQty * Number(items?.adult_price || 0);
@@ -71,8 +73,19 @@ const EventRegistrationCard = ({ items }) => {
       newErrors.email = "Please enter a valid email address";
     }
 
+    const trimmedPhone = (formData.phone || "").trim();
+    if (!trimmedPhone) {
+      newErrors.phone = "Phone number is required";
+    } else if (!/^\+?[0-9\s\-()]{7,15}$/.test(trimmedPhone)) {
+      newErrors.phone = "Please enter a valid phone number";
+    }
+
     if (formData.adultQty + formData.kidQty === 0) {
       newErrors.tickets = "Please select at least one ticket";
+    }
+
+    if (formData.kidQty > 0 && formData.adultQty === 0) {
+      newErrors.tickets = "Kids tickets require at least one adult ticket";
     }
 
     setErrors(newErrors);
@@ -88,6 +101,13 @@ const EventRegistrationCard = ({ items }) => {
       return;
     }
 
+    if (newErrors.phone && phoneRef.current) {
+      phoneRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+      return;
+    }
     if (newErrors.email && emailRef.current) {
       emailRef.current.scrollIntoView({
         behavior: "smooth",
@@ -156,6 +176,7 @@ const EventRegistrationCard = ({ items }) => {
         adultPriceCents: Number(items?.adult_price || 0) * 100,
         kidPriceCents: Number(items?.kid_price || 0) * 100,
         customerEmail: formData.email,
+        customerPhone: formData.phone,
         eventSlug: items?.slug,
         full_name: formData.fullName,
         additional_note: formData.additionalNote,
@@ -237,6 +258,24 @@ const EventRegistrationCard = ({ items }) => {
                     {errors.email && (
                       <div className="invalid-feedback d-block">
                         {errors.email}
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="mb-3" ref={phoneRef}>
+                    <label className="form-label">Phone Number</label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      className={`form-control custom-input ${
+                        errors.phone ? "is-invalid" : ""
+                      }`}
+                      value={formData.phone}
+                      onChange={handleChange}
+                    />
+                    {errors.phone && (
+                      <div className="invalid-feedback d-block">
+                        {errors.phone}
                       </div>
                     )}
                   </div>
@@ -363,7 +402,11 @@ const EventRegistrationCard = ({ items }) => {
           <div className="col-lg-4 blog-sidebar-col">
             <div className="sidebar-sticky-wrapper">
               <BlogSidebar
-                categories={{ ...items, child_price: items?.kid_price , event_date: formattedDate }}
+                categories={{
+                  ...items,
+                  child_price: items?.kid_price,
+                  event_date: formattedDate,
+                }}
                 hideBtn={true}
               />
             </div>
