@@ -42,7 +42,7 @@ export async function POST(req) {
         full_name,
         additional_note,
         special_requests,
-
+        kidAges = []
       } = body;
 
       if (!eventId || !eventName) {
@@ -148,6 +148,7 @@ export async function POST(req) {
           additional_notes: additional_note || null,
           special_requests: special_requests || null,
           status: "pending",
+          kids_ages: kidAges.map(Number),
         })
         .select("id")
         .single();
@@ -176,7 +177,7 @@ export async function POST(req) {
           eventId,
           adultQty: String(adult),
           kidQty: String(kid),
-          adultPriceCents: String(adultPrice), 
+          adultPriceCents: String(adultPrice),
           kidPriceCents: String(kidPrice),
         },
       });
