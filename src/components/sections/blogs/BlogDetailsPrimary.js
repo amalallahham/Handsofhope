@@ -10,6 +10,7 @@ const BlogDetailsPrimary = ({ option }) => {
   const { prevId, nextId, currentItem, isPrevItem, isNextItem } = option || {};
   const { title, id, image_url, tags } = option || {};
 
+
   const formattedDateRaw = new Date(option?.event_date)
     .toLocaleDateString("en-GB", {
       day: "numeric",
@@ -39,12 +40,15 @@ const BlogDetailsPrimary = ({ option }) => {
     ? new Date(option?.event_date) < new Date()
     : false;
 
-  const media_partenrs = option?.sponsors.filter(
-    (sponsor) => sponsor?.type === "media_partner",
-  );
-  const sponsors = option?.sponsors.filter(
-    (sponsor) => sponsor?.type !== "media_partner",
-  );
+  const sortByOrder = (a, b) => (a.sort_order ?? 0) - (b.sort_order ?? 0);
+
+  const media_partenrs = [...(option?.sponsors || [])]
+    .filter((s) => s?.type === "media_partner")
+    .sort(sortByOrder);
+
+  const sponsors = [...(option?.sponsors || [])]
+    .filter((s) => s?.type !== "media_partner")
+    .sort(sortByOrder);
 
   return (
     <section className="tj-blog-section section-gap-1 slidebar-stickiy-container ">
@@ -196,6 +200,7 @@ const BlogDetailsPrimary = ({ option }) => {
                       <cite>{option?.event_collaborators?.[0]?.name}</cite>
                     </blockquote>
                   )}
+
                   {option?.event_collaborators?.length > 0 && (
                     <section className="border-top-dashed py-4">
                       <h3 className="wow fadeInUp" data-wow-delay=".3s">

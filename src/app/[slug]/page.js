@@ -35,19 +35,20 @@ export default async function EventDetailsPage({ params }) {
         id,
         name,
         logo_url,
-        type
+        type,
+        sort_order
       ),
       event_collaborators (
         id,
         name,
         logo_url,
         website_url
-        
       )
     `,
     )
     .eq("slug", slug)
     .maybeSingle();
+
 
   if (error || !event) {
     // notFound();
