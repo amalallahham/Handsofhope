@@ -148,7 +148,7 @@ export async function POST(req) {
           additional_notes: additional_note || null,
           special_requests: special_requests || null,
           status: "pending",
-          kids_ages: kidAges.map(Number),
+          kids_ages: kidAges || null,
         })
         .select("id")
         .single();

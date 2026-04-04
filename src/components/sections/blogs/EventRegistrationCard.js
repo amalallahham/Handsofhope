@@ -194,14 +194,14 @@ const EventRegistrationCard = ({ items }) => {
         eventName: items?.title,
         adultQty: formData.adultQty,
         kidQty: formData.kidQty,
-        kidAges: kidAges.map(Number),
+        kidAges: kidAges.map(Number) > 0 ? kidAges.map(Number) : null,
         adultPriceCents: Number(items?.adult_price || 0) * 100,
         kidPriceCents: Number(items?.kid_price || 0) * 100,
         customerEmail: formData.email,
         customerPhone: formData.phone,
         eventSlug: items?.slug,
         full_name: formData.fullName,
-        additional_note: formData.additionalNote,
+        additional_note:  formData.additionalNote, 
         special_requests: formData.specialRequests,
       };
 
@@ -391,7 +391,7 @@ const EventRegistrationCard = ({ items }) => {
                     </div>
                   )}
 
-                  {formData.kidQty > 0 && (
+                  {/* {formData.kidQty > 0 && (
                     <div className="mb-3">
                       <label className="form-label">
                         Did your kid do anything special this Ramadan or Eid,
@@ -407,7 +407,7 @@ const EventRegistrationCard = ({ items }) => {
                         onChange={handleChange}
                       />
                     </div>
-                  )}
+                  )} */}
 
                   <div className="mb-3">
                     <label className="form-label">Any special requests?</label>
