@@ -10,7 +10,6 @@ const BlogDetailsPrimary = ({ option }) => {
   const { prevId, nextId, currentItem, isPrevItem, isNextItem } = option || {};
   const { title, id, image_url, tags } = option || {};
 
-
   const formattedDateRaw = new Date(option?.event_date)
     .toLocaleDateString("en-GB", {
       day: "numeric",
@@ -40,6 +39,19 @@ const BlogDetailsPrimary = ({ option }) => {
     ? new Date(option?.event_date) < new Date()
     : false;
 
+  const isSameDay = option?.event_date
+    ? (() => {
+        const eventDate = new Date(option.event_date);
+        const today = new Date();
+        return (
+          eventDate.getFullYear() === today.getFullYear() &&
+          eventDate.getMonth() === today.getMonth() &&
+          eventDate.getDate() === today.getDate()
+        );
+      })()
+    : false;
+
+
   const sortByOrder = (a, b) => (a.sort_order ?? 0) - (b.sort_order ?? 0);
 
   const media_partenrs = [...(option?.sponsors || [])]
@@ -67,7 +79,7 @@ const BlogDetailsPrimary = ({ option }) => {
                   blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODcwIiBoZWlnaHQ9IjQ1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZTBlMGUwIi8+PC9zdmc+"
                 />
               </div>
-              {!isHappened && (
+              {!isHappened && !isSameDay ? (
                 <div className="tj-sidebar-widget widget-search p-4 hide-lg">
                   <ButtonPrimary
                     className="w-100"
@@ -75,7 +87,7 @@ const BlogDetailsPrimary = ({ option }) => {
                     url={`/events/${categories?.slug}/register`}
                   />
                 </div>
-              )}
+              ) : <></>}
 
               <div
                 className="card border-0 blog-category-two wow fadeInUp p-4"
@@ -662,7 +674,7 @@ const BlogDetailsPrimary = ({ option }) => {
                   </div>
                 </div>
               </div> */}
-                {!isHappened && (
+              {!isHappened && !isSameDay ? (
                   <div className="d-flex align-items-center justify-content-center border-top-dashed pt-4 w-100">
                     <ButtonPrimary
                       className="w-100"
@@ -670,7 +682,7 @@ const BlogDetailsPrimary = ({ option }) => {
                       url={`/events/${categories?.slug}/register`}
                     />
                   </div>
-                )}
+                ) : null}
               </div>
             </div>
           </div>

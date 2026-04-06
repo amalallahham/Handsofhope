@@ -51,7 +51,7 @@ export default async function EventDetailsPage({ params }) {
 
 
   if (error || !event) {
-    // notFound();
+    return notFound();
     console.error("Error fetching event data:", error);
   }
 

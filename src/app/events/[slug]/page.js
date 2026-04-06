@@ -51,7 +51,7 @@ export default async function EventDetailsPage({ params }) {
     .maybeSingle();
 
   if (error || !event) {
-    // notFound();
+    notFound();
     console.error("Error fetching event data:", error);
   }
 

@@ -37,7 +37,7 @@ const BlogCard3 = ({ event, idx }) => {
 
         <Link className="text-btn" href={`/events/${slug}`}>
           <span className="btn-text">
-            <span>Register now</span>
+            <span>Learn More</span>
           </span>
           <span className="btn-icon">
             <i className="tji-arrow-right-long"></i>

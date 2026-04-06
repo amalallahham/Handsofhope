@@ -26,6 +26,8 @@ const BlogCard8 = ({ event, idx }) => {
 
   const isHappened = event_date ? new Date(event_date) < new Date() : false;
 
+
+
   return (
     <div className="blog-item style-2 wow fadeInUp" data-wow-delay=".3s">
       <div className="blog-thumb">
@@ -92,7 +94,7 @@ const BlogCard8 = ({ event, idx }) => {
               </span>
             </Link> */}
 
-          <ButtonPrimary text={isHappened ? "View Event" : "Register Now"} url={`/events/${slug}`} />
+          <ButtonPrimary text={isHappened ? "View Event" : "Learn More"} url={`/events/${slug}`} />
         </div>
       </div>
     </div>
