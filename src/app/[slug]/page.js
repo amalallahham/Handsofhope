@@ -18,44 +18,57 @@ export default async function EventDetailsPage({ params }) {
     .from("events")
     .select(
       `
-      id,
-      slug,
-      title,
-      description,
-      event_date,
-	  doors_open,
-	  venue,
-	  address,
-	  hosted_by,
-	  adult_price,
-	  kid_price,
+    id,
+    slug,
+    title,
+    description,
+    event_date,
+    doors_open,
+    venue,
+    address,
+    hosted_by,
+    adult_price,
+    kid_price,
     collaboration_note,
-      image_url,
-      sponsors (
-        id,
-        name,
-        logo_url,
-        type,
-        sort_order
-      ),
-      event_collaborators (
-        id,
-        name,
-        logo_url,
-        website_url
-      )
-    `,
+    image_url,
+
+    event_ticket_types (
+      id,
+      name,
+      description,
+      price_cents,
+      max_quantity,
+      is_active,
+      sort_order
+    ),
+
+    sponsors (
+      id,
+      name,
+      logo_url,
+      type,
+      sort_order
+    ),
+
+    event_collaborators (
+      id,
+      name,
+      logo_url,
+      website_url
+    )
+  `,
     )
     .eq("slug", slug)
     .maybeSingle();
 
-
   if (error || !event) {
-    return notFound();
     console.error("Error fetching event data:", error);
+    notFound();
   }
 
-  
+
+
+
   return (
     <div>
       <BackToTop />

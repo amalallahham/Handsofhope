@@ -23,7 +23,6 @@ const PortfolioDetailsPrimary = ({ option, campaign, latestCampaigns }) => {
     slug,
   } = campaign || {};
 
-  console.log("Campaign data in PortfolioDetailsPrimary:", campaign);
 
   const formatCurrency = (value) => {
     const amount = value;

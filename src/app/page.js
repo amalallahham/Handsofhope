@@ -61,11 +61,9 @@ export default async function Home() {
             <Hero2 />
             <Features2 />
             <FeatureMarquee />
-
             <About8 />
             <Portfolios3 campaigns={campaigns} />
             <Blogs8 events={events} />
-
             <Faq2 type={1} />
             <Contact2 />
 

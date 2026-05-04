@@ -24,19 +24,33 @@ export default async function EventRegisterPage({ params }) {
       venue,
       address,
       hosted_by,
-      adult_price,
-      kid_price,
       collaboration_note,
       image_url,
+
       event_collaborators (
         id,
         name,
         logo_url,
         website_url
+      ),
+
+      event_ticket_types (
+        id,
+        name,
+        description,
+        price_cents,
+        max_quantity,
+        is_active,
+        sort_order
       )
-    `,
+      `
     )
     .eq("slug", slug)
+    .eq("event_ticket_types.is_active", true)
+    .order("sort_order", {
+      referencedTable: "event_ticket_types",
+      ascending: true,
+    })
     .maybeSingle();
 
   if (error || !event) {
@@ -52,6 +66,7 @@ export default async function EventRegisterPage({ params }) {
     ? (() => {
         const eventDate = new Date(event.event_date);
         const today = new Date();
+
         return (
           eventDate.getFullYear() === today.getFullYear() &&
           eventDate.getMonth() === today.getMonth() &&
@@ -60,33 +75,29 @@ export default async function EventRegisterPage({ params }) {
       })()
     : false;
 
-  console.log("isRegistrationEnded", isRegistrationEnded);
-  console.log("isSameDay", isSameDay);
   return (
     <div>
       <BackToTop />
       <Header />
       <Header isStickyHeader={true} />
-      <div>
-        <div>
-          <main>
-            <HeaderSpace />
 
-            {isRegistrationEnded || isSameDay ? (
-              <div className="d-flex align-items-center justify-content-center flex-column p-5">
-                <h2 className="text-center">Registration Closed</h2>
-                <p>Sorry, registration for this event has ended.</p>
-              </div>
-            ) : (
-              <>
-                <EventRegistrationCard items={event} />
-                <Cta />
-              </>
-            )}
-          </main>
-          <Footer />
-        </div>
-      </div>
+      <main>
+        <HeaderSpace />
+
+        {isRegistrationEnded || isSameDay ? (
+          <div className="d-flex align-items-center justify-content-center flex-column p-5">
+            <h2 className="text-center">Registration Closed</h2>
+            <p>Sorry, registration for this event has ended.</p>
+          </div>
+        ) : (
+          <>
+            <EventRegistrationCard items={event} />
+            <Cta />
+          </>
+        )}
+      </main>
+
+      <Footer />
       <ClientWrapper />
     </div>
   );

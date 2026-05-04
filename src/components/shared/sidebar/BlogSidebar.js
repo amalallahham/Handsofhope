@@ -1,15 +1,14 @@
 import ButtonPrimary from "../buttons/ButtonPrimary";
 import BlogCategoriesWidget from "./widgets/BlogCategoriesWidget";
 
-
 const BlogSidebar = ({ categories, hideBtn }) => {
-  const isHappened = categories?.event_date
-    ? new Date(categories.event_date) < new Date()
-    : false;
+  const rawDate = categories?.event_date_raw;
 
-  const isSameDay = categories?.event_date
+  const isHappened = rawDate ? new Date(rawDate) < new Date() : false;
+
+  const isSameDay = rawDate
     ? (() => {
-        const eventDate = new Date(categories.event_date);
+        const eventDate = new Date(rawDate);
         const today = new Date();
         return (
           eventDate.getFullYear() === today.getFullYear() &&
@@ -18,26 +17,21 @@ const BlogSidebar = ({ categories, hideBtn }) => {
         );
       })()
     : false;
+
+  const showRegisterBtn = !isSameDay && !isHappened && !hideBtn;
+
   return (
-    <aside className={`tj-main-sidebar`}>
-      {/* <!-- search --> */}
-      {!isSameDay && !isHappened && !hideBtn && (
+    <aside className="tj-main-sidebar">
+      {showRegisterBtn && (
         <div className="tj-sidebar-widget widget-search p-4 hide-sm">
           <ButtonPrimary
             className="w-100"
-            text={"Register Now"}
+            text="Register Now"
             url={`/events/${categories?.slug}/register`}
           />
         </div>
       )}
-      {/* <!-- recent post --> */}
-
-      {/* <!-- category --> */}
       <BlogCategoriesWidget categories={categories} />
-      {/* <!-- tags --> */}
-
-      {/* <RecentBlogWidget /> */}
-      {/* <BlogTagsWidget /> */}
     </aside>
   );
 };

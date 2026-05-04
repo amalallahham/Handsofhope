@@ -8,7 +8,6 @@ const Blogs8 = ({ events }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    console.log("Received events data:", events);
     if (!events || events.length === 0) {
       console.error("No events data available.");
     } else {
