@@ -203,12 +203,12 @@ async function handleEventTicket(session, metadata) {
     const multiplier = Number(item.event_ticket_types?.max_quantity ?? 1);
     const physicalCount = Number(item.quantity) * multiplier;
 
-    for (let i = 0; i < physicalCount; i++) {
+    // for (let i = 0; i < physicalCount; i++) {
       ticketRowsForEmail.push({
         ticket_type: ticketName,
         unit_price_cents: item.unit_price_cents,
       });
-    }
+    // }
   }
 
   const { data: existingTickets, error: existingTicketsError } =
@@ -254,7 +254,6 @@ async function handleEventTicket(session, metadata) {
         return;
       }
 
-      console.log(`Inserted ${ticketsToInsert.length} tickets for order ${orderId}`);
     }
   }
 
@@ -402,7 +401,6 @@ async function handleDonation(session, metadata) {
 }
 
 export async function POST(req) {
-  console.log("Received Stripe webhook POST /api/stripe/webhook");
 
   const body = await req.text();
   const sig = req.headers.get("stripe-signature");

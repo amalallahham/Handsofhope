@@ -27,7 +27,6 @@ const EventRegistrationCard = ({ items }) => {
       .sort((a, b) => (a.sort_order ?? 0) - (b.sort_order ?? 0));
   }, [items?.event_ticket_types]);
 
-
   const total = useMemo(() => {
     return ticketTypes.reduce((sum, ticket) => {
       const qty = ticketQty[ticket.id] ?? 0;
@@ -166,6 +165,8 @@ const EventRegistrationCard = ({ items }) => {
           priceCents: Number(ticket.price_cents),
           quantity: Number(ticketQty[ticket.id]),
         }));
+
+      console.log("Line items:", lineItems);
 
       const payload = {
         type: "event_ticket",
@@ -323,11 +324,7 @@ const EventRegistrationCard = ({ items }) => {
                                 type="button"
                                 className="qty-btn"
                                 onClick={() =>
-                                  updateQty(
-                                    ticket.id,
-                                    -1,
-                                    ticket.max_quantity,
-                                  )
+                                  updateQty(ticket.id, -1, ticket.max_quantity)
                                 }
                                 disabled={loading || qty === 0}
                               >
